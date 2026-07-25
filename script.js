@@ -24,11 +24,18 @@ async function loadProducts() {
 
                 <img src="${product.image}" alt="${product.name}">
 
-                <h3>${product.name}</h3>
+                <p class="brand">${product.brand}</p>
 
-                <p class="price">₹${product.price}</p>
+<h3>${product.name}</h3>
 
-                <button onclick="addToCart('${product.name}', ${product.price})">
+<p class="description">${product.description}</p>
+
+<p class="price">₹${product.price}</p>
+
+            <button
+    class="add-cart-btn"
+    data-name="${product.name}"
+    data-price="${product.price}">
 
                     🛒 Add to Cart
 
@@ -37,6 +44,18 @@ async function loadProducts() {
             </div>
 
             `;
+
+        });
+        document.querySelectorAll(".add-cart-btn").forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                const productName = this.dataset.name;
+                const productPrice = Number(this.dataset.price);
+
+                addToCart(productName, productPrice);
+
+            });
 
         });
 
