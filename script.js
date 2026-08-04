@@ -10,7 +10,8 @@ async function loadProducts() {
 
         const response = await fetch("http://localhost:8080/products");
 
-        const products = await response.json();
+        const responseData = await response.json();
+        const products = responseData.data;
 
         const productDiv = document.getElementById("products");
 
