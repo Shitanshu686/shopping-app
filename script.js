@@ -8,57 +8,13 @@ async function loadProducts() {
 
     try {
 
-        const response = await fetch("http://localhost:8080/products");
+        const products = await fetchProducts();
 
-        const responseData = await response.json();
-        const products = responseData.data;
+        renderProducts(products);
 
-        const productDiv = document.getElementById("products");
+        attachCartEvents();
 
-        productDiv.innerHTML = "";
 
-        products.forEach(product => {
-
-            productDiv.innerHTML += `
-
-            <div class="card">
-
-                <img src="${product.image}" alt="${product.name}">
-
-                <p class="brand">${product.brand}</p>
-
-<h3>${product.name}</h3>
-
-<p class="description">${product.description}</p>
-
-<p class="price">₹${product.price}</p>
-
-            <button
-    class="add-cart-btn"
-    data-name="${product.name}"
-    data-price="${product.price}">
-
-                    🛒 Add to Cart
-
-                </button>
-
-            </div>
-
-            `;
-
-        });
-        document.querySelectorAll(".add-cart-btn").forEach(button => {
-
-            button.addEventListener("click", function () {
-
-                const productName = this.dataset.name;
-                const productPrice = Number(this.dataset.price);
-
-                addToCart(productName, productPrice);
-
-            });
-
-        });
 
     }
 
@@ -250,35 +206,7 @@ function buyNow() {
 
 }
 
-// ======================
-// SEARCH
-// ======================
 
-function searchProduct(value) {
-
-    value = value.toLowerCase();
-
-    let cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-
-        let name = card.querySelector("h3").textContent.toLowerCase();
-
-        if (name.includes(value)) {
-
-            card.style.display = "block";
-
-        }
-
-        else {
-
-            card.style.display = "none";
-
-        }
-
-    });
-
-}
 
 // ======================
 // CART DRAWER
@@ -296,25 +224,6 @@ function closeCart() {
 
 }
 
-// ======================
-// TOAST
-// ======================
-
-function showToast(message) {
-
-    let toast = document.getElementById("toast");
-
-    toast.innerHTML = message;
-
-    toast.classList.add("show");
-
-    setTimeout(() => {
-
-        toast.classList.remove("show");
-
-    }, 2000);
-
-}
 
 // ======================
 // START
