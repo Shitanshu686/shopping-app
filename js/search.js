@@ -6,7 +6,7 @@ function searchProduct(value) {
 
     value = value.toLowerCase();
 
-    let cards = document.querySelectorAll(".card");
+    let cards = document.querySelectorAll(".product-card");
 
     cards.forEach(card => {
 

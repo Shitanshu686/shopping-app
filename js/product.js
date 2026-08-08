@@ -28,37 +28,45 @@ function createProductCard(product) {
 
     return `
 
-    <div class="card">
+    <div class="product-card">
 <div class="wishlist-btn">
     🤍
 </div>
-        <div class="discount-badge">
+        <div class="product-card__discount">
             ${discount}% OFF
         </div>
 
-        <img src="${product.image}" alt="${product.name}">
+        <img
+    class="product-card__image"
+    src="${product.image}"
+    alt="${product.name}"
+>
 
-        <p class="brand">${product.brand}</p>
+        <p class="product-card__brand">
+    ${product.brand}
+</p>
 
-        <h3>${product.name}</h3>
+        <h3 class="product-card__title">
+    ${product.name}
+</h3>
 
-        <p class="description">
-            ${product.description}
-        </p>
+        <p class="product-card__description">
+    ${product.description}
+</p>
 
-        <div class="rating">
-            ⭐ ${product.rating}
-        </div>
+        <div class="product-card__rating">
+    ⭐ ${product.rating}
+</div>
 
-        <div class="price-section">
+        <div class="product-card__price-section">
 
-            <span class="price">
-                ₹${product.price}
-            </span>
+            <span class="product-card__price">
+    ₹${product.price}
+</span>
 
-            <span class="old-price">
-                ₹${product.oldPrice}
-            </span>
+            <span class="product-card__old-price">
+    ₹${product.oldPrice}
+</span>
 
         </div>
 

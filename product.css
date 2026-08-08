@@ -99,7 +99,7 @@
     margin-top: 15px;
 }
 
-.rating {
+.product-card .rating {
     margin: 10px 0;
     color: #f4b400;
     font-weight: bold;
@@ -113,18 +113,18 @@
     margin: 12px 0;
 }
 
-.price {
+.product-card .price {
     color: #2874f0;
     font-size: 24px;
     font-weight: bold;
 }
 
-.old-price {
+.product-card .old-price {
     color: gray;
     text-decoration: line-through;
 }
 
-.stock {
+.product-card .stock {
     display: block;
     margin-bottom: 15px;
     font-weight: bold;
