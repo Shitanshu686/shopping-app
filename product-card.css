@@ -1,0 +1,183 @@
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.product-card {
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .12);
+
+    transition: .3s;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.product-card__image {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   PRODUCT DISCOUNT
+========================================================= */
+
+.product-card__discount {
+    background: #e53935;
+
+    color: white;
+
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   PRODUCT BRAND
+========================================================= */
+
+.product-card__brand {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #555;
+
+    margin: 15px 0 5px;
+}
+
+
+/* =========================================================
+   PRODUCT TITLE
+========================================================= */
+
+.product-card__title {
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   PRODUCT DESCRIPTION
+========================================================= */
+
+.product-card__description {
+    font-size: 13px;
+
+    color: #777;
+
+    margin: 8px 0;
+}
+
+
+/* =========================================================
+   PRODUCT RATING
+========================================================= */
+
+.product-card__rating {
+    margin: 10px 0;
+
+    color: #f4b400;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   PRODUCT PRICE
+========================================================= */
+
+.product-card__price-section {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 12px 0;
+}
+
+.product-card__price {
+    color: #2874f0;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.product-card__old-price {
+    color: gray;
+
+    text-decoration: line-through;
+}
+
+
+/* =========================================================
+   PRODUCT STOCK
+========================================================= */
+
+.product-card .stock {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.product-card .in-stock {
+    color: green;
+}
+
+.product-card .low-stock {
+    color: orange;
+}
+
+.product-card .out-stock {
+    color: red;
+}
+
+/* =========================================================
+   ADD TO CART BUTTON
+========================================================= */
+
+.product-card .add-cart-btn {
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #2874f0;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.product-card .add-cart-btn:hover {
+    background: #0b5ed7;
+}
