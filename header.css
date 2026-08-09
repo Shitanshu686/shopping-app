@@ -1,0 +1,47 @@
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background: #2874f0;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+.navbar {
+    height: 75px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+.logo-section h1 {
+    color: white;
+    font-size: 35px;
+}

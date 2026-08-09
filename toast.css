@@ -1,0 +1,32 @@
+/* =========================================================
+   TOAST
+========================================================= */
+
+#toast {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    background: #28a745;
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 8px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .4s;
+
+    z-index: 9999;
+}
+
+#toast.show {
+    opacity: 1;
+
+    visibility: visible;
+}

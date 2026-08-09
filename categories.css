@@ -1,0 +1,38 @@
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+.categories {
+    width: 95%;
+    margin: 25px auto;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.categories button {
+    background: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+}
+
+.categories button:hover {
+    background: #2874f0;
+    color: white;
+}

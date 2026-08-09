@@ -1,0 +1,34 @@
+/* =========================================================
+   CART
+========================================================= */
+
+#cartPanel {
+    position: fixed;
+
+    top: 0;
+    right: -420px;
+
+    width: 400px;
+    height: 100vh;
+
+    background: white;
+
+    box-shadow: -5px 0 20px rgba(0, 0, 0, .2);
+
+    transition: .4s;
+
+    padding: 20px;
+
+    overflow: auto;
+
+    z-index: 999;
+}
+
+.cart-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
