@@ -28,7 +28,7 @@ function createProductCard(product) {
 
     return `
 
-    <div class="product-card">
+    <div class="product-card" data-category="${product.category}">
 <div class="wishlist-btn">
     🤍
 </div>
