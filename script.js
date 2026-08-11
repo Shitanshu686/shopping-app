@@ -20,9 +20,14 @@ async function loadProducts() {
 
     catch (error) {
 
-        console.error(error);
+        console.error(
+            "Failed to load products:",
+            error
+        );
 
-        showToast("❌ Backend Not Running");
+        showToast(
+            "❌ Unable to load products"
+        );
 
     }
 
@@ -230,3 +235,4 @@ function closeCart() {
 // ======================
 
 loadProducts();
+

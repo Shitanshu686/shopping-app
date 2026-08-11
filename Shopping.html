@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/wishlist.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/toast.css">
-
+    <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/footer.css">
 
 </head>
@@ -59,7 +59,34 @@
                     🛒 Cart (<span id="cartCount">0</span>)
                 </a>
 
-                <a href="Login.html">Login</a>
+                <div class="profile-container">
+
+                    <button id="loginLink" class="profile-button">
+                        Login
+                    </button>
+
+                    <div id="profileDropdown" class="profile-dropdown">
+
+                        <div class="profile-info">
+
+                            <h3 id="profileName"></h3>
+
+                            <p id="profileEmail"></p>
+
+                            <p>
+                                Role:
+                                <span id="profileRole"></span>
+                            </p>
+
+                        </div>
+
+                        <button id="logoutButton" class="logout-button">
+                            Logout
+                        </button>
+
+                    </div>
+
+                </div>
 
             </nav>
 
