@@ -59,7 +59,19 @@ if (token && userData) {
 
     profileRole.textContent =
         user.role;
+    const adminPanelButton =
+        document.getElementById("adminPanelButton");
 
+    if (user.role === "ADMIN") {
+
+        adminPanelButton.style.display = "block";
+
+    }
+    else {
+
+        adminPanelButton.style.display = "none";
+
+    }
 
     // ======================
     // SHOW / HIDE PROFILE

@@ -142,30 +142,42 @@ Frontend and backend communicate through REST APIs.
 
 ### Implemented
 
--   JWT stored in LocalStorage-   User information stored in LocalStorage-   Login redirect
+- JWT stored in LocalStorage
+- User information stored in LocalStorage
+- Login redirect
+- Logged-in username in navbar
+- Profile dropdown
+- User name display
+- User email display
+- User role display
+- Logout
+- Login/logout UI state
+- Automatic JWT headers for protected APIs
+- Centralized apiFetch()
+- 401 handling
+- 403 handling
 
-### Next
-
--   Logged-in username in navbar-   Logout-   Login/logout UI state-   Automatic JWT headers for protected APIs
-
-**Status: 🟡 Partially Completed**
-
-------------------------------------------------------------------------
-
+**Status: ✅ Completed**
 ## 9. Security
-
 ### Completed
 
--   BCrypt password hashing-   Spring Security-   JWT authentication-   JWT filter-   Protected endpoint-   Public product APIs-   Public login/register APIs
+- BCrypt password hashing
+- Spring Security
+- JWT authentication
+- JWT filter
+- Protected endpoint
+- Public product APIs
+- Public login/register APIs
+- ADMIN role authorization
+- USER role authorization
+- Role-based APIs
 
-### Pending
+### Verified
 
--   ADMIN role authorization-   USER role authorization-   Role-based APIs-   Protected cart APIs-   Protected wishlist APIs-   Protected order APIs
+- USER → Admin API → 403 Forbidden
+- ADMIN → Product creation → 201 Created
 
-**Status: 🟡 Authentication Complete / Authorization Pending**
-
-------------------------------------------------------------------------
-
+**Status: ✅ Completed**
 ## 10. API Response Standardization
 
 Backend uses:
@@ -212,7 +224,14 @@ Implemented: - ProductRequestDTO - ProductResponseDTO - UserRequestDTO -UserResp
 
 # 📊 Current Integrated Feature Status
 
-  Feature              Frontend   Backend   Integration**  -------------------- ---------- --------- -------------**  Product Listing      ✅         ✅        ✅  Product Search       ✅         ✅        🟢  Categories           ✅         ✅        🟢  Shopping Cart        ✅         ⬜        🟡  Signup               ✅         ✅        ✅  Login                ✅         ✅        ✅  BCrypt               ---        ✅        ✅  JWT                  ✅         ✅        ✅  Protected API        ---        ✅        ✅  Logout               ⬜         ⬜        ⬜  Role Authorization   ⬜         ⬜        ⬜  Wishlist             ⬜         ⬜        ⬜  Orders               ⬜         ⬜        ⬜  Payment              ⬜         ⬜        ⬜  Admin Panel          ⬜         ⬜        ⬜
+| Feature | Frontend | Backend | Integration |
+|---|---|---|---|
+| Signup | ✅ | ✅ | ✅ |
+| Login | ✅ | ✅ | ✅ |
+| JWT | ✅ | ✅ | ✅ |
+| Protected API | ✅ | ✅ | ✅ |
+| Logout | ✅ | --- | ✅ |
+Role Authorization | ✅ | ✅ | ✅
 
 ------------------------------------------------------------------------
 
@@ -222,10 +241,18 @@ Implemented: - ProductRequestDTO - ProductResponseDTO - UserRequestDTO -UserResp
 
 -   [x] Product system-   [x] MySQL integration-   [x] CRUD APIs-   [x] Product search-   [x] Category system-   [x] Frontend cart-   [ ] Backend persistent cart
 
-## Phase 2 --- Authentication
+## Phase 2 — Authentication
 
--   [x] Signup-   [x] Login-   [x] BCrypt-   [x] Spring Security-   [x] JWT generation-   [x] JWT validation-   [x] JWT filter-   [x] Protected APIs-   [ ] Logout-   [ ] Role-based authorization
-
+- [x] Signup
+- [x] Login
+- [x] BCrypt
+- [x] Spring Security
+- [x] JWT generation
+- [x] JWT validation
+- [x] JWT filter
+- [x] Protected APIs
+- [x] Logout
+- [x] Role-based authorization
 ## Phase 3 --- Customer Features
 
 -   [ ] Product details-   [ ] Specifications-   [ ] Similar products-   [ ] Backend cart-   [ ] Persistent cart-   [ ] Wishlist-   [ ] Checkout-   [ ] Shipping address-   [ ] Orders-   [ ] Order history-   [ ] Order status
@@ -296,20 +323,33 @@ This is an approximate project-progress indicator, not a strictmathematical meas
 
 ### Major remaining areas
 
--   Role-based authorization-   Backend cart-   Wishlist-   Orders-   Payment-   Admin panel-   Production hardening-   Docker/CI-CD-   Microservices-   Messaging-   Deployment
-
+- Frontend role-based UI
+- Backend persistent cart
+- Wishlist
+- Orders
+- Payment
+- Admin panel
+- Production hardening
+- Docker/CI-CD
+- Microservices
+- Messaging
+- Deployment
 ------------------------------------------------------------------------
 
 # 🔄 Current Target
 
 ## Current
 
-➡️ **Role-Based Authorization**
+➡️ Frontend Role-Based UI
 
 ### Next
 
-1.  ADMIN role2.  USER role3.  Role-based APIs4.  Logout5.  Logged-in user UI6.  Backend Shopping Cart7.  Wishlist8.  Orders
-
+1. ADMIN-only UI
+2. USER UI restrictions
+3. Backend Shopping Cart
+4. Persistent Cart
+5. Wishlist
+6. Orders
 ------------------------------------------------------------------------
 
 # 🎯 Final Goal
