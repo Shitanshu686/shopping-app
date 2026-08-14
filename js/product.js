@@ -27,8 +27,11 @@ function createProductCard(product) {
     }
 
     return `
-
-    <div class="product-card" data-category="${product.category}">
+<div
+    class="product-card"
+    data-category="${product.category}"
+    data-product-id="${product.id}"
+>
 <div class="wishlist-btn">
     🤍
 </div>
@@ -71,6 +74,13 @@ function createProductCard(product) {
         </div>
 
         ${stockStatus}
+
+        <button
+    class="product-details-btn"
+    data-product-id="${product.id}"
+>
+    👁 View Details
+</button>
 
         <button
             class="add-cart-btn"

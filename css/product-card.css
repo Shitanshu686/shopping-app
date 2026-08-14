@@ -181,3 +181,31 @@
 .product-card .add-cart-btn:hover {
     background: #0b5ed7;
 }
+
+/* =========================
+   PRODUCT DETAILS BUTTON
+========================= */
+
+.product-details-btn {
+    width: 85%;
+
+    padding: 8px 14px;
+
+    margin: 8px auto 0;
+
+    border: 1px solid #2874f0;
+    border-radius: 6px;
+
+    background: white;
+    color: #2874f0;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.product-details-btn:hover {
+    background: #2874f0;
+    color: white;
+}

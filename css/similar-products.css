@@ -1,0 +1,156 @@
+/* =========================
+   SIMILAR PRODUCTS
+========================= */
+
+.similar-products-section {
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.similar-products-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   PRODUCTS GRID
+========================= */
+
+#similarProducts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.similar-product-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 15px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.similar-product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.similar-product-card img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+}
+
+
+/* =========================
+   PRODUCT NAME
+========================= */
+
+.similar-product-card h3 {
+    font-size: 17px;
+    margin: 12px 0 8px;
+
+    min-height: 42px;
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+.similar-product-card p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.similar-product-card strong {
+    display: block;
+
+    font-size: 20px;
+
+    margin: 10px 0;
+}
+
+
+/* =========================
+   VIEW DETAILS BUTTON
+========================= */
+
+.similar-product-card button {
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: opacity 0.2s ease;
+}
+
+.similar-product-card button:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    #similarProducts {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #similarProducts {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+.similar-product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.similar-product-actions button {
+    flex: 1;
+    padding: 9px 6px;
+}

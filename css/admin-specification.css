@@ -1,0 +1,74 @@
+/* =========================
+   ADMIN SPECIFICATION
+========================= */
+
+#adminSpecificationSection {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 25px 30px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+#adminSpecificationSection h2 {
+    margin: 0 0 20px;
+
+    font-size: 22px;
+}
+
+#adminSpecificationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#adminSpecificationForm div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#adminSpecificationForm label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#adminSpecificationForm input {
+    padding: 11px 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+#adminSpecificationForm input:focus {
+    border-color: #2874f0;
+}
+
+#adminSpecificationForm button {
+    width: 180px;
+
+    padding: 11px 16px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #2874f0;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#adminSpecificationForm button:hover {
+    background: #0b5ed7;
+}

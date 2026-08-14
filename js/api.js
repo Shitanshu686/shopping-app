@@ -94,7 +94,7 @@ async function apiFetch(
             `API Error: ${response.status}`
         );
 
-        return null;
+        return response;
 
     }
 
