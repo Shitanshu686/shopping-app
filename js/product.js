@@ -32,9 +32,13 @@ function createProductCard(product) {
     data-category="${product.category}"
     data-product-id="${product.id}"
 >
-<div class="wishlist-btn">
+<button
+    class="wishlist-btn"
+    data-product-id="${product.id}"
+    onclick="toggleWishlist(${product.id}, this)"
+>
     🤍
-</div>
+</button>
         <div class="product-card__discount">
             ${discount}% OFF
         </div>

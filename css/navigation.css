@@ -4,18 +4,86 @@
 
 nav {
     display: flex;
+
+    align-items: center;
+
     gap: 30px;
 }
 
 nav a {
+    display: flex;
+
+    align-items: center;
+
     text-decoration: none;
 
     color: white;
+
     font-weight: bold;
+
+    line-height: 1;
+
+    white-space: nowrap;
 
     transition: .3s;
 }
 
 nav a:hover {
     color: yellow;
+}
+
+
+/* =========================================================
+   WISHLIST NAV BUTTON
+========================================================= */
+
+.wishlist-nav-btn {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    margin: 0;
+
+    font-family: inherit;
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+.wishlist-nav-btn:hover {
+    color: yellow;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-container {
+    display: flex;
+
+    align-items: center;
+
+    margin: 0;
+
+    padding: 0;
 }

@@ -55,6 +55,7 @@ async function loadProducts() {
         renderProducts(products);
 
         attachCartEvents();
+        syncWishlistButtons();
 
 
 
