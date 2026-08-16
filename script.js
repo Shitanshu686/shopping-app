@@ -78,48 +78,84 @@ async function loadProducts() {
 // ======================
 // ADD TO CART
 // ======================
+async function addToCart(
+    productId,
+    productName,
+    productPrice,
+    productImage
+) {
 
-function addToCart(product, price) {
+    try {
 
-    if (cart[product]) {
+        const cartData =
+            await addProductToCart(
+                productId,
+                1
+            );
 
-        if (cart[product].quantity >= 5) {
+        if (!cartData) {
 
-            showToast("⚠ Maximum 5 items allowed");
+            showToast(
+                "❌ Unable to add product to cart"
+            );
 
             return;
 
         }
 
-        cart[product].quantity++;
+        // ======================
+        // UPDATE FRONTEND CART
+        // ======================
+
+        cart = {};
+
+        cartData.items.forEach(item => {
+
+            cart[item.productId] = {
+
+                cartItemId: item.id,
+
+                price: item.price,
+
+                quantity: item.quantity,
+
+                image: item.image,
+
+                name: item.productName
+
+            };
+
+        });
+
+        updateCart();
+
+        showToast(
+            "✅ " + productName + " added to cart"
+        );
 
     }
+    catch (error) {
 
-    else {
+        console.error(
+            "Failed to add product to cart:",
+            error
+        );
 
-        cart[product] = {
-
-            price: price,
-
-            quantity: 1
-
-        };
+        showToast(
+            "❌ Unable to add product to cart"
+        );
 
     }
-
-    updateCart();
-
-    showToast("✅ " + product + " added to cart");
 
 }
-
 // ======================
 // UPDATE CART
 // ======================
 
 function updateCart() {
 
-    let cartItems = document.getElementById("cartItems");
+    const cartItems =
+        document.getElementById("cartItems");
 
     cartItems.innerHTML = "";
 
@@ -127,106 +163,294 @@ function updateCart() {
 
     let count = 0;
 
-    for (let product in cart) {
 
-        let item = cart[product];
+    for (let productId in cart) {
+
+        const item =
+            cart[productId];
+
+
+        const subtotal =
+            item.price * item.quantity;
+
 
         count += item.quantity;
 
-        total += item.price * item.quantity;
+        total += subtotal;
+
 
         cartItems.innerHTML += `
 
-        <li>
+        <li class="cart-item">
 
-            <strong>${product}</strong>
+            <div class="cart-item-content">
 
-            <br>
+                <img
+                    class="cart-item-image"
+                    src="${item.image}"
+                    alt="${item.name}"
+                >
 
-            Qty : ${item.quantity}
+                <div class="cart-item-details">
 
-            <br>
+                    <strong>
+                        ${item.name}
+                    </strong>
 
-            ₹${item.price * item.quantity}
+                    <div class="cart-item-price">
+                        ₹${item.price}
+                    </div>
 
-            <br><br>
+                    <div class="cart-item-quantity">
+                        Qty : ${item.quantity}
+                    </div>
 
-            <button onclick="changeQty('${product}','inc')">+</button>
+                    <div class="cart-item-subtotal">
+                        ₹${subtotal}
+                    </div>
 
-            <button onclick="changeQty('${product}','dec')">-</button>
+                    <div class="cart-item-actions">
 
-            <button onclick="removeItem('${product}')">
+                        <button
+                            onclick="changeQty(${productId}, 'inc')"
+                        >
+                            +
+                        </button>
 
-                Remove
+                        <button
+                            onclick="changeQty(${productId}, 'dec')"
+                        >
+                            -
+                        </button>
 
-            </button>
+                        <button
+                            onclick="removeItem(${productId})"
+                        >
+                            Remove
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </li>
-
-        <hr>
 
         `;
 
     }
 
-    document.getElementById("total").textContent = total;
 
-    document.getElementById("itemCount").textContent = count;
+    document.getElementById("total").textContent =
+        total;
 
-    let cartCount = document.getElementById("cartCount");
+
+    document.getElementById("itemCount").textContent =
+        count;
+
+
+    const cartCount =
+        document.getElementById("cartCount");
 
     if (cartCount) {
 
-        cartCount.textContent = count;
+        cartCount.textContent =
+            count;
 
     }
-    localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-    );
-}
 
+
+    /*
+     * Backend cart is now the source of truth.
+     *
+     * We intentionally do NOT save this cart
+     * back into localStorage here.
+     */
+}
 // ======================
 // CHANGE QUANTITY
 // ======================
 
-function changeQty(product, action) {
+async function changeQty(productId, action) {
+
+    const item =
+        cart[productId];
+
+    if (!item) {
+        return;
+    }
+
+
+    let newQuantity =
+        item.quantity;
+
 
     if (action === "inc") {
 
-        if (cart[product].quantity < 5)
+        newQuantity++;
 
-            cart[product].quantity++;
+    }
+    else if (action === "dec") {
+
+        newQuantity--;
 
     }
 
-    else {
 
-        cart[product].quantity--;
+    // ======================
+    // REMOVE WHEN QUANTITY
+    // BECOMES ZERO
+    // ======================
 
-        if (cart[product].quantity <= 0) {
+    if (newQuantity <= 0) {
 
-            delete cart[product];
+        await removeItem(productId);
+
+        return;
+
+    }
+
+
+    // ======================
+    // UPDATE BACKEND
+    // ======================
+
+    try {
+
+        const cartData =
+            await updateCartQuantity(
+                item.cartItemId,
+                newQuantity
+            );
+
+
+        if (!cartData) {
+
+            showToast(
+                "❌ Unable to update quantity"
+            );
+
+            return;
 
         }
 
+
+        // ======================
+        // SYNC FRONTEND CART
+        // ======================
+
+        cart = {};
+
+        cartData.items.forEach(item => {
+
+            cart[item.productId] = {
+
+                cartItemId: item.id,
+
+                price: item.price,
+
+                quantity: item.quantity,
+
+                image: item.image,
+
+                name: item.productName
+
+            };
+
+        });
+
+
+        updateCart();
+
+    }
+    catch (error) {
+
+        console.error(
+            "Failed to update cart quantity:",
+            error
+        );
+
+        showToast(
+            "❌ Unable to update quantity"
+        );
+
     }
 
-    updateCart();
-
 }
-
 // ======================
 // REMOVE PRODUCT
 // ======================
 
-function removeItem(product) {
+async function removeItem(productId) {
 
-    delete cart[product];
+    const item =
+        cart[productId];
 
-    updateCart();
+    if (!item) {
+        return;
+    }
 
-    showToast("🗑 Product Removed");
+    try {
+
+        const cartData =
+            await removeCartItem(
+                item.cartItemId
+            );
+
+        if (!cartData) {
+
+            showToast(
+                "❌ Unable to remove product"
+            );
+
+            return;
+
+        }
+
+        // ======================
+        // SYNC FRONTEND CART
+        // ======================
+
+        cart = {};
+
+        cartData.items.forEach(item => {
+
+            cart[item.productId] = {
+
+                cartItemId: item.id,
+
+                price: item.price,
+
+                quantity: item.quantity,
+
+                image: item.image,
+
+                name: item.productName
+
+            };
+
+        });
+
+        updateCart();
+
+        showToast(
+            "🗑 Product Removed"
+        );
+
+    }
+    catch (error) {
+
+        console.error(
+            "Failed to remove cart item:",
+            error
+        );
+
+        showToast(
+            "❌ Unable to remove product"
+        );
+
+    }
 
 }
 
@@ -279,5 +503,62 @@ function closeCart() {
 // START
 // ======================
 
+
+// ======================
+// LOAD BACKEND CART
+// ======================
+
+async function loadBackendCart() {
+
+    const token =
+        localStorage.getItem("token");
+
+    // User logged in nahi hai
+    if (!token) {
+        return;
+    }
+
+    try {
+
+        const cartData =
+            await fetchCart();
+
+        if (!cartData) {
+            return;
+        }
+
+        cart = {};
+
+        cartData.items.forEach(item => {
+
+            cart[item.productId] = {
+
+                cartItemId: item.id,
+
+                price: item.price,
+
+                quantity: item.quantity,
+
+                image: item.image,
+
+                name: item.productName
+
+            };
+
+        });
+
+        updateCart();
+
+    }
+    catch (error) {
+
+        console.error(
+            "Failed to load backend cart:",
+            error
+        );
+
+    }
+}
 loadProducts();
 loadPendingCartItem();
+loadBackendCart();

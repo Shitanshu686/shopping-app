@@ -121,3 +121,119 @@ async function fetchProducts() {
     return responseData.data;
 
 }
+
+// ======================
+// CART API
+// ======================
+
+async function fetchCart() {
+
+    const response =
+        await apiFetch("/cart");
+
+    if (!response) {
+        return null;
+    }
+
+    const responseData =
+        await response.json();
+
+    return responseData.data;
+}
+
+
+// ======================
+// ADD PRODUCT TO CART
+// ======================
+
+async function addProductToCart(
+    productId,
+    quantity
+) {
+
+    const response =
+        await apiFetch(
+            "/cart",
+            {
+                method: "POST",
+
+                body: JSON.stringify({
+
+                    productId: productId,
+
+                    quantity: quantity
+
+                })
+            }
+        );
+
+    if (!response) {
+        return null;
+    }
+
+    const responseData =
+        await response.json();
+
+    return responseData.data;
+}
+
+
+// ======================
+// UPDATE CART QUANTITY
+// ======================
+
+async function updateCartQuantity(
+    itemId,
+    quantity
+) {
+
+    const response =
+        await apiFetch(
+            `/cart/${itemId}`,
+            {
+                method: "PUT",
+
+                body: JSON.stringify({
+
+                    quantity: quantity
+
+                })
+            }
+        );
+
+    if (!response) {
+        return null;
+    }
+
+    const responseData =
+        await response.json();
+
+    return responseData.data;
+}
+
+
+// ======================
+// REMOVE CART ITEM
+// ======================
+
+async function removeCartItem(
+    itemId
+) {
+
+    const response =
+        await apiFetch(
+            `/cart/${itemId}`,
+            {
+                method: "DELETE"
+            }
+        );
+
+    if (!response) {
+        return null;
+    }
+
+    const responseData =
+        await response.json();
+
+    return responseData.data;
+}

@@ -83,13 +83,15 @@ function createProductCard(product) {
 </button>
 
         <button
-            class="add-cart-btn"
-            data-name="${product.name}"
-            data-price="${product.price}">
+    class="add-cart-btn"
+    data-id="${product.id}"
+    data-name="${product.name}"
+    data-price="${product.price}"
+    data-image="${product.image}">
 
-            🛒 Add to Cart
+    🛒 Add to Cart
 
-        </button>
+</button>
 
     </div>
 

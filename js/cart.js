@@ -8,21 +8,38 @@ function attachCartEvents() {
 
         button.addEventListener("click", function () {
 
-            const productName = this.dataset.name;
-            const productPrice = Number(this.dataset.price);
+            const productId =
+                Number(this.dataset.id);
 
-            addToCart(productName, productPrice);
+            const productName =
+                this.dataset.name;
+
+            const productPrice =
+                Number(this.dataset.price);
+
+            const productImage =
+                this.dataset.image;
+
+            addToCart(
+                productId,
+                productName,
+                productPrice,
+                productImage
+            );
 
         });
 
     });
-    // ======================
-    // INITIALIZE CART
-    // ======================
 
-    function initializeCart() {
+}
 
-        attachCartEvents();
 
-    }
+// ======================
+// INITIALIZE CART
+// ======================
+
+function initializeCart() {
+
+    attachCartEvents();
+
 }

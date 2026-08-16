@@ -1,5 +1,5 @@
 /* =========================================================
-   CART
+   CART DRAWER
 ========================================================= */
 
 #cartPanel {
@@ -9,26 +9,412 @@
     right: -420px;
 
     width: 400px;
+    max-width: 100%;
+
     height: 100vh;
 
-    background: white;
+    background: #ffffff;
 
-    box-shadow: -5px 0 20px rgba(0, 0, 0, .2);
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
 
-    transition: .4s;
+    transition: right 0.35s ease;
 
-    padding: 20px;
+    padding: 22px;
 
-    overflow: auto;
+    box-sizing: border-box;
 
-    z-index: 999;
+    overflow-y: auto;
+
+    z-index: 9999;
+
+    font-family: Arial, sans-serif;
 }
+
+
+/* =========================================================
+   CART HEADER
+========================================================= */
 
 .cart-header {
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
-    margin-bottom: 20px;
+    padding-bottom: 18px;
+
+    margin-bottom: 18px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.cart-header h2 {
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #222222;
+}
+
+.cart-header button {
+    width: 34px;
+
+    height: 34px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    color: #333333;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.cart-header button:hover {
+    background: #e5e7eb;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   CART ITEMS CONTAINER
+========================================================= */
+
+#cartItems {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0 0 18px 0;
+}
+
+
+/* =========================================================
+   INDIVIDUAL CART ITEM
+========================================================= */
+
+#cartItems li {
+    padding: 16px;
+
+    margin-bottom: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 14px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+
+    transition: 0.2s ease;
+}
+
+#cartItems li:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.09);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PRODUCT NAME
+========================================================= */
+
+#cartItems li strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #222222;
+}
+
+
+/* =========================================================
+   CART ITEM TEXT
+========================================================= */
+
+#cartItems li {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #555555;
+}
+
+
+/* =========================================================
+   QUANTITY BUTTONS
+========================================================= */
+
+#cartItems li button {
+    margin-top: 10px;
+
+    margin-right: 6px;
+
+    padding: 7px 12px;
+
+    border: 1px solid #dcdcdc;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #333333;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#cartItems li button:hover {
+    border-color: #2563eb;
+
+    color: #2563eb;
+
+    background: #f5f8ff;
+}
+
+
+/* =========================================================
+   REMOVE BUTTON
+========================================================= */
+
+#cartItems li button:last-child {
+    border-color: #fecaca;
+
+    background: #fff5f5;
+
+    color: #dc2626;
+}
+
+#cartItems li button:last-child:hover {
+    background: #fee2e2;
+
+    border-color: #ef4444;
+}
+
+
+/* =========================================================
+   CART SUMMARY
+========================================================= */
+
+#cartPanel>h3 {
+    margin: 12px 0 7px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeee;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: #222222;
+}
+
+#cartPanel>h3 span {
+    color: #2563eb;
+}
+
+#cartPanel>h4 {
+    margin: 0 0 18px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #777777;
+}
+
+
+/* =========================================================
+   CHECKOUT BUTTON
+========================================================= */
+
+#cartPanel>button {
+    width: 100%;
+
+    padding: 13px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#cartPanel>button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.25);
+}
+
+#cartPanel>button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   EMPTY CART
+========================================================= */
+
+#cartItems:empty {
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+#cartItems:empty::before {
+    content: "🛒";
+
+    display: block;
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    opacity: 0.25;
+}
+
+#cartItems:empty::after {
+    content: "Your cart is empty";
+
+    display: block;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #777777;
+}
+
+
+/* =========================================================
+   CART SCROLLBAR
+========================================================= */
+
+#cartPanel::-webkit-scrollbar {
+    width: 6px;
+}
+
+#cartPanel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#cartPanel::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+
+    border-radius: 10px;
+}
+
+#cartPanel::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #cartPanel {
+        width: 100%;
+
+        right: -100%;
+
+        padding: 18px;
+    }
+
+    .cart-header h2 {
+        font-size: 21px;
+    }
+
+    #cartItems li {
+        padding: 14px;
+    }
+
+}
+
+/* =========================================================
+   CART ITEM LAYOUT
+========================================================= */
+
+.cart-item-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    width: 100%;
+}
+
+.cart-item-details {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CART PRODUCT IMAGE
+========================================================= */
+
+.cart-item-image {
+    width: 82px;
+
+    height: 82px;
+
+    min-width: 82px;
+
+    object-fit: contain;
+
+    display: block;
+
+    padding: 7px;
+
+    box-sizing: border-box;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
 }
