@@ -32,56 +32,55 @@ ShopEase is a full-stack e-commerce application developed using:
 - Git
 - GitHub
 
-
 ------------------------------------------------------------------------
 
 # 🏗️ Current Architecture
 
 ```text
-                    ShopEase
-                       │
-        ┌──────────────┴──────────────┐
-        │                             │
-    FRONTEND                       BACKEND
-        │                             │
- HTML / CSS / JS                 Spring Boot
-        │                             │
-     Fetch API                  Spring MVC
-        │                             │
-     api.js                    Spring Security
-        │                             │
-        └──────── REST API ────────────┘
-                       │
-                     JWT
-                       │
-                    MySQL
+                    ShopEase
+                       │
+        ┌──────────────┴──────────────┐
+        │                             │
+    FRONTEND                       BACKEND
+        │                             │
+ HTML / CSS / JS                 Spring Boot
+        │                             │
+     Fetch API                  Spring MVC
+        │                             │
+     api.js                    Spring Security
+        │                             │
+        └──────── REST API ────────────┘
+                       │
+                     JWT
+                       │
+                    MySQL
 The frontend communicates with the Spring Boot backend through REST APIs.
 
 Authentication is handled using JWT.
 
 📊 Overall Integrated Status
-Module	Frontend	Backend	Integration	Status
-Product System	✅	✅	✅	Complete
-Product Search	✅	✅	✅	Complete
-Category System	✅	✅	✅	Complete
-Product Details	✅	✅	✅	Complete
-Product Specifications	✅	✅	✅	Complete
-Similar Products	✅	✅	✅	Complete
-Signup	✅	✅	✅	Complete
-Login	✅	✅	✅	Complete
-JWT Authentication	✅	✅	✅	Complete
-Authentication State	✅	✅	✅	Complete
-Role-Based Authorization	✅	✅	✅	Complete
-Shopping Cart	✅	✅	✅	Complete
-Persistent Cart	✅	✅	✅	Complete
-Validation	✅	✅	✅	Complete
-Exception Handling	—	✅	✅	Complete
-DTO Layer	—	✅	✅	Complete
-Wishlist	❌	❌	❌	Pending
-Checkout	❌	❌	❌	Pending
-Orders	❌	❌	❌	Pending
-Payment	❌	❌	❌	Pending
-Admin Dashboard	Partial	Partial	❌	Pending
+Module  Frontend    Backend Integration Status
+Product System  ✅   ✅   ✅   Complete
+Product Search  ✅   ✅   ✅   Complete
+Category System ✅   ✅   ✅   Complete
+Product Details ✅   ✅   ✅   Complete
+Product Specifications  ✅   ✅   ✅   Complete
+Similar Products    ✅   ✅   ✅   Complete
+Signup  ✅   ✅   ✅   Complete
+Login   ✅   ✅   ✅   Complete
+JWT Authentication  ✅   ✅   ✅   Complete
+Authentication State    ✅   ✅   ✅   Complete
+Role-Based Authorization    ✅   ✅   ✅   Complete
+Shopping Cart   ✅   ✅   ✅   Complete
+Persistent Cart ✅   ✅   ✅   Complete
+Validation  ✅   ✅   ✅   Complete
+Exception Handling  —   ✅   ✅   Complete
+DTO Layer   —   ✅   ✅   Complete
+Wishlist    ✅   ✅   ✅   Complete
+Checkout    ❌   ❌   ❌   Pending
+Orders  ❌   ❌   ❌   Pending
+Payment ❌   ❌   ❌   Pending
+Admin Dashboard Partial Partial ❌   Pending
 1. 📦 Product Module
 Frontend
 Product cards
@@ -110,28 +109,28 @@ Product DTOs
 Product validation
 Product exception handling
 APIs
-GET    /products
-GET    /products/{id}
-POST   /products
-PUT    /products/{id}
+GET    /products
+GET    /products/{id}
+POST   /products
+PUT    /products/{id}
 DELETE /products/{id}
 Integration
 Frontend
-   ↓
+   ↓
 Fetch API
-   ↓
+   ↓
 GET /products
-   ↓
+   ↓
 ProductController
-   ↓
+   ↓
 ProductService
-   ↓
+   ↓
 ProductRepository
-   ↓
+   ↓
 MySQL
-   ↓
+   ↓
 JSON Response
-   ↓
+   ↓
 Frontend Product Cards
 
 Status: ✅ Fully Integrated
@@ -148,13 +147,13 @@ Product data is loaded from the backend product API.
 
 Integration
 Search
-   ↓
+   ↓
 Frontend Product Data
-   ↓
+   ↓
 Filter
-   ↓
+   ↓
 Matching Products
-   ↓
+   ↓
 Product Cards
 
 Status: ✅ Completed
@@ -178,11 +177,11 @@ Product category stored in database
 Category information returned with product data
 Integration
 Category Selection
-       ↓
+       ↓
 Frontend Filtering
-       ↓
+       ↓
 Product Data
-       ↓
+       ↓
 Filtered Products
 
 Status: ✅ Integrated
@@ -206,19 +205,19 @@ Backend
 GET /products/{id}
 Integration
 Product Card
-     ↓
+     ↓
 Product ID
-     ↓
+     ↓
 Product Details Page
-     ↓
+     ↓
 GET /products/{id}
-     ↓
+     ↓
 Spring Boot
-     ↓
+     ↓
 MySQL
-     ↓
+     ↓
 Product Response
-     ↓
+     ↓
 Frontend Details Page
 
 Status: ✅ Fully Integrated
@@ -235,12 +234,11 @@ Product-specific specification handling
 ADMIN authorization
 Authorization
 ADMIN
-  ↓
+  ↓
 Can manage specifications
 
-
 USER
-  ↓
+  ↓
 Can view product information
 
 Status: ✅ Integrated
@@ -257,13 +255,13 @@ Similar product data is obtained using the product/category information.
 
 Integration
 Product Details
-      ↓
+      ↓
 Current Product
-      ↓
+      ↓
 Similar Products
-      ↓
+      ↓
 Backend Product Data
-      ↓
+      ↓
 Frontend Similar Products
 
 Status: ✅ Fully Integrated
@@ -290,15 +288,15 @@ Duplicate email validation
 Role assignment
 Integration
 Signup Form
-     ↓
+     ↓
 POST /users/register
-     ↓
+     ↓
 UserService
-     ↓
+     ↓
 BCrypt
-     ↓
+     ↓
 MySQL
-     ↓
+     ↓
 Registration Response
 
 Status: ✅ Fully Integrated
@@ -320,17 +318,17 @@ Invalid credential handling
 JWT generation
 Integration
 Login Form
-     ↓
+     ↓
 POST /users/login
-     ↓
+     ↓
 UserService
-     ↓
+     ↓
 BCrypt Verification
-     ↓
+     ↓
 JWT Generation
-     ↓
+     ↓
 Token Response
-     ↓
+     ↓
 LocalStorage
 
 Status: ✅ Fully Integrated
@@ -352,14 +350,14 @@ Authorization header
 Authorization: Bearer <token>
 Verification
 Without JWT
-     ↓
+     ↓
 Protected API
-     ↓
+     ↓
 401 Unauthorized
 Valid JWT
-     ↓
+     ↓
 Protected API
-     ↓
+     ↓
 200 OK
 
 Status: ✅ Fully Integrated
@@ -388,11 +386,11 @@ JWT
 Other HTTP Errors
 Integration
 Login
-  ↓
+  ↓
 JWT + User Data
-  ↓
+  ↓
 LocalStorage
-  ↓
+  ↓
 Frontend UI
 
 Status: ✅ Completed
@@ -410,14 +408,14 @@ ADMIN product operations
 ADMIN specification management
 Verified
 USER
-  ↓
+  ↓
 ADMIN Protected API
-  ↓
+  ↓
 403 Forbidden
 ADMIN
-  ↓
+  ↓
 ADMIN Protected API
-  ↓
+  ↓
 Allowed
 
 Status: ✅ Fully Integrated
@@ -425,11 +423,11 @@ Status: ✅ Fully Integrated
 12. 🛒 Shopping Cart — Backend
 Entities
 User
-  ↓
+  ↓
 Cart
-  ↓
+  ↓
 CartItem
-  ↓
+  ↓
 Product
 Backend
 Cart Entity
@@ -446,21 +444,21 @@ Cart subtotal
 Total
 Total items
 APIs
-POST   /cart
-GET    /cart
-PUT    /cart/{itemId}
+POST   /cart
+GET    /cart
+PUT    /cart/{itemId}
 DELETE /cart/{itemId}
 Integration
 Frontend
-     ↓
+     ↓
 JWT
-     ↓
+     ↓
 CartController
-     ↓
+     ↓
 CartService
-     ↓
+     ↓
 Repositories
-     ↓
+     ↓
 MySQL
 
 Status: ✅ Backend Complete
@@ -490,42 +488,42 @@ updateCartQuantity()
 removeCartItem()
 Add To Cart
 Product Card
-     ↓
+     ↓
 Product ID
-     ↓
+     ↓
 POST /cart
-     ↓
+     ↓
 Backend
-     ↓
+     ↓
 Database
-     ↓
+     ↓
 Cart Response
-     ↓
+     ↓
 Frontend Cart
 Quantity Update
 +
 -
- ↓
+ ↓
 PUT /cart/{itemId}
- ↓
+ ↓
 Backend
- ↓
+ ↓
 Database
- ↓
+ ↓
 Updated Cart
- ↓
+ ↓
 Frontend
 Remove Item
 Remove
-  ↓
+  ↓
 DELETE /cart/{itemId}
-  ↓
+  ↓
 Backend
-  ↓
+  ↓
 Database
-  ↓
+  ↓
 Updated Cart
-  ↓
+  ↓
 Frontend
 
 Status: ✅ Fully Integrated
@@ -536,24 +534,24 @@ Cart is stored in the backend database and is associated with the authenticated 
 
 Verified Flow
 USER LOGIN
-     ↓
+     ↓
 GET /cart
-     ↓
+     ↓
 Database Cart
-     ↓
+     ↓
 Frontend
 Add Product
-     ↓
+     ↓
 Database
-     ↓
+     ↓
 Logout
-     ↓
+     ↓
 Cart remains
-     ↓
+     ↓
 Login Again
-     ↓
+     ↓
 GET /cart
-     ↓
+     ↓
 Same Cart Restored
 Verified
 Cart survives page refresh
@@ -570,18 +568,14 @@ Implemented DTOs
 ProductRequestDTO
 ProductResponseDTO
 
-
 UserRequestDTO
 UserResponseDTO
-
 
 LoginRequestDTO
 LoginResponseDTO
 
-
 AddToCartRequestDTO
 UpdateCartItemDTO
-
 
 CartItemResponseDTO
 CartResponseDTO
@@ -609,9 +603,9 @@ Cart Validation
 Example:
 
 quantity = 0
-      ↓
+      ↓
 400 Bad Request
-      ↓
+      ↓
 Validation Failed
 Frontend
 Signup validation
@@ -642,10 +636,10 @@ Stock errors
 Cart errors
 Standard Response
 {
-    "success": false,
-    "message": "...",
-    "data": null,
-    "timestamp": "..."
+    "success": false,
+    "message": "...",
+    "data": null,
+    "timestamp": "..."
 }
 
 Status: ✅ Completed
@@ -673,6 +667,135 @@ Exception responses
 
 Status: ✅ Completed
 
+19. 🤍 Wishlist Module
+
+Backend
+
+Wishlist Entity
+
+WishlistItem Entity
+
+Wishlist Repository
+
+WishlistItem Repository
+
+Wishlist Service
+
+Wishlist Controller
+
+User-specific wishlist
+
+Persistent wishlist
+
+Duplicate wishlist-item validation
+
+Wishlist item ownership validation
+
+Wishlist item not-found handling
+
+APIs
+
+POST /wishlist/{productId}
+
+GET /wishlist
+
+DELETE /wishlist/{itemId}
+
+Backend Flow
+USER
+↓
+JWT Authentication
+↓
+WishlistController
+↓
+WishlistService
+↓
+WishlistRepository / WishlistItemRepository
+↓
+MySQL
+
+Frontend
+
+Wishlist navbar button
+
+Wishlist count
+
+Wishlist drawer
+
+Wishlist product cards
+
+Add to wishlist
+
+Remove from wishlist
+
+Wishlist button toggle
+
+Existing wishlist state after refresh
+
+Wishlist API integration
+
+Remove-item handling
+
+Empty wishlist UI
+
+Modular wishlist.js
+
+Modular wishlist.css
+
+Responsive wishlist drawer
+
+Integration
+Product
+↓
+Wishlist Button
+↓
+POST /wishlist/{productId}
+↓
+Spring Boot
+↓
+MySQL
+↓
+Wishlist Response
+↓
+Frontend Wishlist
+
+Remove Flow
+Wishlist Remove
+↓
+DELETE /wishlist/{itemId}
+↓
+Spring Boot
+↓
+MySQL
+↓
+Updated Wishlist
+↓
+Frontend
+
+Verified
+
+Add product to wishlist
+
+View wishlist
+
+Remove product from wishlist
+
+Duplicate product handling
+
+Wishlist item not found handling
+
+User-specific wishlist
+
+Wishlist persistence
+
+Wishlist count synchronization
+
+Wishlist button state synchronization
+
+Frontend + backend integration
+
+Status: ✅ Fully Integrated and Tested
+
 📈 CURRENT PROJECT STATUS
 🟢 Fully Integrated Modules
 1. Product System
@@ -693,12 +816,12 @@ Status: ✅ Completed
 16. Validation
 17. Exception Handling
 18. Standard API Response
+19. Wishlist
 🟡 Partially Completed
 Admin Dashboard
 Admin Management
 Production Hardening
 🔴 Pending
-Wishlist
 Checkout
 Shipping Address
 Orders
@@ -719,148 +842,150 @@ Deployment
 Microservices
 Kafka / RabbitMQ
 Cloud Deployment
+
 🚀 NEXT DEVELOPMENT TARGET
-Wishlist Module
+
+Checkout Module
+
 Backend
-1. Wishlist Entity
-2. WishlistItem Entity
-3. Wishlist Repository
-4. WishlistItem Repository
-5. Wishlist Service
-6. Wishlist Controller
-7. Add to Wishlist API
-8. Remove from Wishlist API
-9. View Wishlist API
-10. Persistent Wishlist
-11. User-specific Wishlist
+1. Checkout API design
+2. Checkout request/response DTOs
+3. Checkout validation
+4. Shipping address handling
+5. Order preparation from cart
+6. Checkout service
+7. Checkout controller
+8. Cart-to-order validation
+
 Frontend
-1. Wishlist UI
-2. Wishlist Button
-3. Add to Wishlist
-4. Remove from Wishlist
-5. View Wishlist
-6. Wishlist API integration
-7. Persistent Wishlist
+1. Checkout UI
+2. Order summary
+3. Shipping address form
+4. Checkout validation
+5. Checkout API integration
+6. Place order flow
+7. Success/error handling
+
 Integration
 Frontend
-     ↓
+↓
 api.js
-     ↓
-Wishlist REST API
-     ↓
+↓
+Checkout REST API
+↓
 Spring Boot
-     ↓
+↓
 MySQL
-     ↓
-Wishlist Response
-     ↓
+↓
+Checkout Response
+↓
 Frontend
 
-Current Target: 🔄 Wishlist
+Current Target: 🔄 Checkout
 
 🗺️ FUTURE ROADMAP
 Phase 1 — Core E-Commerce
- Product System
- MySQL Integration
- Product CRUD
- Product Search
- Category System
- Product Details
- Product Specifications
- Similar Products
- Shopping Cart
- Persistent Cart
- Frontend ↔ Backend Cart Integration
+ Product System
+ MySQL Integration
+ Product CRUD
+ Product Search
+ Category System
+ Product Details
+ Product Specifications
+ Similar Products
+ Shopping Cart
+ Persistent Cart
+ Frontend ↔ Backend Cart Integration
 Phase 2 — Authentication & Security
- Signup
- Login
- BCrypt
- Spring Security
- JWT
- JWT Filter
- Protected APIs
- Logout
- Role-Based Authorization
+ Signup
+ Login
+ BCrypt
+ Spring Security
+ JWT
+ JWT Filter
+ Protected APIs
+ Logout
+ Role-Based Authorization
 Phase 3 — Customer Features
- Product Details
- Product Specifications
- Similar Products
- Shopping Cart
- Persistent Cart
- Wishlist
- Checkout
- Shipping Address
- Orders
- Order History
- Order Status
+ Product Details
+ Product Specifications
+ Similar Products
+ Shopping Cart
+ Persistent Cart
+ Wishlist
+ Checkout
+ Shipping Address
+ Orders
+ Order History
+ Order Status
 Phase 4 — Payment
- Razorpay Integration
- Payment Verification
- Payment Status
- Order-Payment Integration
+ Razorpay Integration
+ Payment Verification
+ Payment Status
+ Order-Payment Integration
 Phase 5 — Admin
- Admin Authentication
- Role-Based Authorization
- Product Management APIs
- Product Specification Management
- Admin Dashboard
- User Management
- Order Management
- Inventory Management
+ Admin Authentication
+ Role-Based Authorization
+ Product Management APIs
+ Product Specification Management
+ Admin Dashboard
+ User Management
+ Order Management
+ Inventory Management
 Phase 6 — Production Backend
- Logging
- Pagination
- Sorting
- Advanced Search
- Filtering
- Image Upload
- API Documentation
- Automated Testing
- Production Hardening
+ Logging
+ Pagination
+ Sorting
+ Advanced Search
+ Filtering
+ Image Upload
+ API Documentation
+ Automated Testing
+ Production Hardening
 Phase 7 — DevOps
- Dockerfile
- Docker Compose
- Spring Boot Container
- MySQL Container
- GitHub Actions
- CI/CD
- Environment Variables
- Production Deployment
+ Dockerfile
+ Docker Compose
+ Spring Boot Container
+ MySQL Container
+ GitHub Actions
+ CI/CD
+ Environment Variables
+ Production Deployment
 Phase 8 — Advanced Architecture
- Microservices
- API Gateway
- Product Service
- User Service
- Cart Service
- Order Service
- Payment Service
- Kafka / RabbitMQ
- Event-Driven Architecture
- Concurrency
- Distributed Service Communication
- Cloud Deployment
+ Microservices
+ API Gateway
+ Product Service
+ User Service
+ Cart Service
+ Order Service
+ Payment Service
+ Kafka / RabbitMQ
+ Event-Driven Architecture
+ Concurrency
+ Distributed Service Communication
+ Cloud Deployment
 🔄 DEVELOPMENT WORKFLOW
 
 Every major feature follows:
 
 1. Backend Development
-        ↓
+        ↓
 2. Backend API Testing
-        ↓
+        ↓
 3. Frontend Development
-        ↓
+        ↓
 4. API Layer Integration
-        ↓
+        ↓
 5. Frontend + Backend Integration
-        ↓
+        ↓
 6. Full Feature Testing
-        ↓
+        ↓
 7. Bug Fixing
-        ↓
+        ↓
 8. Git Commit
-        ↓
+        ↓
 9. Git Push
-        ↓
+        ↓
 10. Update Project Status
 🎯 FINAL PROJECT GOAL
 
@@ -868,39 +993,39 @@ ShopEase is being developed toward a complete production-oriented
 full-stack e-commerce application containing:
 
 Frontend
-    ↓
+    ↓
 Spring Boot Backend
-    ↓
+    ↓
 MySQL
-    ↓
+    ↓
 JWT Authentication
-    ↓
+    ↓
 Role-Based Authorization
-    ↓
+    ↓
 Persistent Cart
-    ↓
+    ↓
 Persistent Wishlist
-    ↓
+    ↓
 Checkout
-    ↓
+    ↓
 Shipping
-    ↓
+    ↓
 Orders
-    ↓
+    ↓
 Payment
-    ↓
+    ↓
 Admin Dashboard
-    ↓
+    ↓
 Inventory
-    ↓
+    ↓
 Testing
-    ↓
+    ↓
 Docker
-    ↓
+    ↓
 CI/CD
-    ↓
+    ↓
 Cloud Deployment
-    ↓
+    ↓
 Advanced Architecture
 
 The project is being developed module-by-module with frontend,

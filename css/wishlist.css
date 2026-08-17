@@ -1,5 +1,5 @@
 /* =========================================================
-   WISHLIST
+   PRODUCT CARD WISHLIST BUTTON
 ========================================================= */
 
 .product-card .wishlist-btn {
@@ -12,6 +12,8 @@
     height: 38px;
 
     background: white;
+
+    border: none;
 
     border-radius: 50%;
 
@@ -31,4 +33,140 @@
 
 .product-card .wishlist-btn:hover {
     transform: scale(1.15);
+}
+
+
+/* =========================================================
+   WISHLIST PANEL
+========================================================= */
+
+#wishlistPanel {
+
+    position: fixed !important;
+
+    top: 0 !important;
+
+    right: -420px;
+
+    width: 400px;
+
+    height: 100vh !important;
+
+    background: white !important;
+
+    box-shadow:
+        -5px 0 20px rgba(0, 0, 0, 0.20);
+
+    z-index: 999999 !important;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    padding: 20px;
+
+    transition: right 0.3s ease;
+
+}
+
+
+/* =========================================================
+   WISHLIST HEADER
+========================================================= */
+
+#wishlistPanel .wishlist-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+#wishlistPanel .wishlist-header h2 {
+
+    margin: 0;
+
+    font-size: 22px;
+
+    color: #222;
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+#wishlistPanel .wishlist-header button {
+
+    width: 32px;
+
+    height: 32px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f1f1;
+
+    color: #333;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+#wishlistPanel .wishlist-header button:hover {
+
+    background: #ddd;
+
+}
+
+
+/* =========================================================
+   WISHLIST ITEMS
+========================================================= */
+
+#wishlistPanel #wishlistItems {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #wishlistPanel {
+
+        width: 100%;
+
+        right: -100%;
+
+        padding: 15px;
+
+    }
+
 }
