@@ -140,8 +140,109 @@ async function fetchCart() {
 
     return responseData.data;
 }
+// ======================
+// ORDER API
+// ======================
 
+// ======================
+// PLACE ORDER
+// ======================
+// ======================
+// PLACE ORDER
+// ======================
 
+async function placeOrder(orderData) {
+
+    const response =
+        await apiFetch(
+            "/orders",
+            {
+                method: "POST",
+
+                body: JSON.stringify(
+                    orderData
+                )
+            }
+        );
+
+    if (!response) {
+        return null;
+    }
+
+    const responseData =
+        await response.json();
+
+    // ======================
+    // PLACE ORDER
+    // ======================
+
+    async function placeOrder(orderData) {
+
+        const response =
+            await apiFetch(
+                "/orders",
+                {
+                    method: "POST",
+
+                    body: JSON.stringify(
+                        orderData
+                    )
+                }
+            );
+
+        if (!response) {
+            return null;
+        }
+
+        const responseData =
+            await response.json();
+
+        return responseData.data;
+    }
+
+    return responseData.data;
+}
+
+// ======================
+// FETCH SINGLE ORDER
+// ======================
+
+async function fetchOrderById(orderId) {
+
+    const response =
+        await apiFetch(
+            `/orders/${orderId}`
+        );
+
+    if (!response) {
+        return null;
+    }
+
+    const responseData =
+        await response.json();
+
+    return responseData.data;
+}
+// ======================
+// FETCH ORDER HISTORY
+// ======================
+
+async function fetchOrders() {
+
+    const response =
+        await apiFetch(
+            "/orders"
+        );
+
+    if (!response) {
+        return null;
+    }
+
+    const responseData =
+        await response.json();
+
+    return responseData.data;
+}
 // ======================
 // ADD PRODUCT TO CART
 // ======================

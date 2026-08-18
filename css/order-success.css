@@ -1,0 +1,162 @@
+/* ====================== */
+/* ORDER SUCCESS */
+/* ====================== */
+
+.order-success-container {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+}
+
+
+.order-success-card {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    background: #ffffff;
+
+    padding: 40px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.10);
+
+}
+
+
+/* ====================== */
+/* TITLE */
+/* ====================== */
+
+.order-success-card h1 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.order-success-card>p {
+
+    color: #666;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ====================== */
+/* ORDER INFO */
+/* ====================== */
+
+.order-info {
+
+    text-align: left;
+
+    background: #f7f7f7;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.order-info p {
+
+    margin: 10px 0;
+
+}
+
+
+.order-info strong {
+
+    display: inline-block;
+
+    min-width: 100px;
+
+}
+
+
+/* ====================== */
+/* ACTIONS */
+/* ====================== */
+
+.order-success-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+
+.order-success-actions button {
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2874f0;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+}
+
+
+.order-success-actions button:hover {
+
+    background: #1f63d1;
+
+}
+
+
+/* ====================== */
+/* MOBILE */
+/* ====================== */
+
+@media (max-width: 600px) {
+
+    .order-success-card {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .order-success-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .order-success-actions button {
+
+        width: 100%;
+
+    }
+
+}

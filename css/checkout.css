@@ -1,0 +1,145 @@
+/* ====================== */
+/* CHECKOUT */
+/* ====================== */
+
+.checkout-container {
+
+    width: 90%;
+    max-width: 900px;
+
+    margin: 40px auto;
+
+}
+
+
+.checkout-container h1 {
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ====================== */
+/* CHECKOUT SECTION */
+/* ====================== */
+
+.checkout-section {
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* ====================== */
+/* FORM */
+/* ====================== */
+
+#checkoutForm {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+#checkoutForm input {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+
+}
+
+
+#checkoutForm input:focus {
+
+    outline: none;
+
+    border-color: #2874f0;
+
+}
+
+
+/* ====================== */
+/* PLACE ORDER BUTTON */
+/* ====================== */
+
+#placeOrderBtn {
+
+    margin-top: 10px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2874f0;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+#placeOrderBtn:hover {
+
+    background: #1f63d1;
+
+}
+
+
+#placeOrderBtn:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ====================== */
+/* MOBILE */
+/* ====================== */
+
+@media (max-width: 600px) {
+
+    .checkout-container {
+
+        width: 94%;
+
+        margin: 25px auto;
+
+    }
+
+
+    .checkout-section {
+
+        padding: 20px;
+
+    }
+
+}

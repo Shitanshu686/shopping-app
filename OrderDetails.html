@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Details - ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order-details.css">
+
+</head>
+
+<body>
+
+    <main class="order-details-container">
+
+        <h1>Order Details</h1>
+
+
+        <!-- ====================== -->
+        <!-- ORDER SUMMARY -->
+        <!-- ====================== -->
+
+        <section class="order-summary">
+
+            <p>
+                <strong>Order ID:</strong>
+                <span id="orderId"></span>
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                <span id="orderStatus"></span>
+            </p>
+
+            <p>
+                <strong>Total:</strong>
+                ₹<span id="orderTotal"></span>
+            </p>
+
+            <p>
+                <strong>Order Date:</strong>
+                <span id="orderDate"></span>
+            </p>
+
+        </section>
+
+
+        <!-- ====================== -->
+        <!-- SHIPPING ADDRESS -->
+        <!-- ====================== -->
+
+        <section class="shipping-details">
+
+            <h2>Shipping Address</h2>
+
+            <p>
+                <strong>Name:</strong>
+                <span id="fullName"></span>
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                <span id="phone"></span>
+            </p>
+
+            <p>
+                <strong>Address:</strong>
+                <span id="address"></span>
+            </p>
+
+            <p>
+                <strong>City:</strong>
+                <span id="city"></span>
+            </p>
+
+            <p>
+                <strong>State:</strong>
+                <span id="state"></span>
+            </p>
+
+            <p>
+                <strong>Pincode:</strong>
+                <span id="pincode"></span>
+            </p>
+
+        </section>
+
+
+        <!-- ====================== -->
+        <!-- ORDER ITEMS -->
+        <!-- ====================== -->
+
+        <section class="order-items">
+
+            <h2>Order Items</h2>
+
+            <div id="orderItems"></div>
+
+        </section>
+
+
+        <!-- ====================== -->
+        <!-- BACK -->
+        <!-- ====================== -->
+
+        <button onclick="goBack()">
+            Back
+        </button>
+
+    </main>
+
+
+    <script src="js/api.js"></script>
+
+    <script src="js/order-details.js"></script>
+
+</body>
+
+</html>

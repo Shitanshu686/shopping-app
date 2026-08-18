@@ -20,6 +20,9 @@ const profileRole =
 const logoutButton =
     document.getElementById("logoutButton");
 
+const myOrdersButton =
+    document.getElementById("myOrdersButton");
+
 const token =
     localStorage.getItem("token");
 
@@ -59,47 +62,88 @@ if (token && userData) {
 
     profileRole.textContent =
         user.role;
+
+
+    // ======================
+    // ADMIN PANEL
+    // ======================
+
     const adminPanelButton =
         document.getElementById("adminPanelButton");
 
+
     if (user.role === "ADMIN") {
 
-        adminPanelButton.style.display = "block";
+        adminPanelButton.style.display =
+            "block";
 
     }
     else {
 
-        adminPanelButton.style.display = "none";
+        adminPanelButton.style.display =
+            "none";
 
     }
+
+
+    // ======================
+    // MY ORDERS
+    // ======================
+
+    if (myOrdersButton) {
+
+        myOrdersButton.addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "OrderHistory.html";
+
+            }
+        );
+
+    }
+
 
     // ======================
     // SHOW / HIDE PROFILE
     // ======================
 
-    loginLink.addEventListener("click", function (event) {
+    loginLink.addEventListener(
+        "click",
+        function (event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        profileDropdown.classList.toggle("show");
+            profileDropdown.classList.toggle(
+                "show"
+            );
 
-    });
+        }
+    );
 
 
     // ======================
     // LOGOUT
     // ======================
 
-    logoutButton.addEventListener("click", function () {
+    logoutButton.addEventListener(
+        "click",
+        function () {
 
-        localStorage.removeItem("token");
+            localStorage.removeItem(
+                "token"
+            );
 
-        localStorage.removeItem("user");
+            localStorage.removeItem(
+                "user"
+            );
 
-        window.location.href =
-            "Login.html";
+            window.location.href =
+                "Login.html";
 
-    });
+        }
+    );
 
 }
 else {
@@ -111,12 +155,16 @@ else {
     profileDropdown.style.display =
         "none";
 
-    loginLink.addEventListener("click", function () {
 
-        window.location.href =
-            "Login.html";
+    loginLink.addEventListener(
+        "click",
+        function () {
 
-    });
+            window.location.href =
+                "Login.html";
+
+        }
+    );
 
 }
 
@@ -126,4 +174,3 @@ else {
 // ======================
 
 loadProducts();
-

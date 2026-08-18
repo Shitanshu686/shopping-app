@@ -1,0 +1,153 @@
+/* ====================== */
+/* ORDER HISTORY */
+/* ====================== */
+
+.order-history-container {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+}
+
+
+.order-history-container>h1 {
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ====================== */
+/* ORDERS CONTAINER */
+/* ====================== */
+
+#ordersContainer {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+/* ====================== */
+/* ORDER CARD */
+/* ====================== */
+
+.order-card {
+
+    background: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    border-left: 4px solid #2874f0;
+
+}
+
+
+.order-card h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.order-card p {
+
+    margin: 8px 0;
+
+    color: #555;
+
+}
+
+
+.order-card strong {
+
+    color: #222;
+
+}
+
+
+/* ====================== */
+/* VIEW ORDER */
+/* ====================== */
+
+.order-card button {
+
+    margin-top: 15px;
+
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2874f0;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+}
+
+
+.order-card button:hover {
+
+    background: #1f63d1;
+
+}
+
+
+/* ====================== */
+/* EMPTY ORDERS */
+/* ====================== */
+
+#noOrdersMessage {
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    color: #666;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+}
+
+
+/* ====================== */
+/* MOBILE */
+/* ====================== */
+
+@media (max-width: 600px) {
+
+    .order-history-container {
+
+        width: 94%;
+
+        margin: 25px auto;
+
+    }
+
+
+    .order-card {
+
+        padding: 20px;
+
+    }
+
+}

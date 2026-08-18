@@ -454,35 +454,41 @@ async function removeItem(productId) {
     }
 
 }
-
 // ======================
-// BUY NOW
+// CHECKOUT
 // ======================
 
 function buyNow() {
 
-    let total = document.getElementById("total").textContent;
+    const total =
+        Number(
+            document.getElementById("total").textContent
+        );
 
-    if (total == 0) {
 
-        showToast("🛒 Cart is Empty");
+    // ======================
+    // EMPTY CART
+    // ======================
+
+    if (total === 0) {
+
+        showToast(
+            "🛒 Cart is Empty"
+        );
 
         return;
 
     }
 
-    showToast("🎉 Order Placed Successfully");
 
-    cart = {};
+    // ======================
+    // GO TO CHECKOUT
+    // ======================
 
-    updateCart();
-
-    closeCart();
+    window.location.href =
+        "Checkout.html";
 
 }
-
-
-
 // ======================
 // CART DRAWER
 // ======================

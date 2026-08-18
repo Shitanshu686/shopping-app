@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Success - ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order-success.css">
+</head>
+
+<body>
+
+    <main class="order-success-container">
+
+        <div class="order-success-card">
+
+            <h1>🎉 Order Placed Successfully!</h1>
+
+            <p>
+                Thank you for shopping with ShopEase.
+            </p>
+
+
+            <!-- ====================== -->
+            <!-- ORDER INFORMATION -->
+            <!-- ====================== -->
+
+            <div class="order-info">
+
+                <p>
+                    <strong>Order ID:</strong>
+                    <span id="orderId"></span>
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    <span id="orderStatus"></span>
+                </p>
+
+                <p>
+                    <strong>Total:</strong>
+                    ₹<span id="orderTotal"></span>
+                </p>
+
+            </div>
+
+
+            <!-- ====================== -->
+            <!-- ACTIONS -->
+            <!-- ====================== -->
+
+            <div class="order-success-actions">
+
+                <button onclick="viewOrder()">
+                    View Order
+                </button>
+
+                <button onclick="continueShopping()">
+                    Continue Shopping
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/order-success.js"></script>
+
+</body>
+
+</html>
