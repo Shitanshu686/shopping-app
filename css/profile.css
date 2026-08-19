@@ -229,3 +229,55 @@
     transform: translateY(0);
 
 }
+
+/* ====================== */
+/* CHANGE PASSWORD BUTTON */
+/* ====================== */
+
+#changePasswordButton {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 10px 12px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #2874f0;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: normal;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+
+}
+
+#changePasswordButton:hover {
+
+    background: #1769d3;
+
+}
+
+#changePasswordButton:active {
+
+    transform: scale(0.98);
+
+}

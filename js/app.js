@@ -23,6 +23,8 @@ const logoutButton =
 const myOrdersButton =
     document.getElementById("myOrdersButton");
 
+
+
 const token =
     localStorage.getItem("token");
 
@@ -122,7 +124,19 @@ if (token && userData) {
         }
     );
 
+    if (changePasswordButton) {
 
+        changePasswordButton.addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "ChangePassword.html";
+
+            }
+        );
+
+    }
     // ======================
     // LOGOUT
     // ======================
