@@ -1,0 +1,136 @@
+/* ====================== */
+/* DARK MODE */
+/* ====================== */
+
+body.dark-mode {
+
+    background: #121212;
+
+    color: #f1f1f1;
+
+}
+
+
+/* ====================== */
+/* HEADER */
+/* ====================== */
+
+body.dark-mode header {
+
+    background: #181818;
+
+}
+
+
+/* ====================== */
+/* APPLICATION SIDEBAR */
+/* ====================== */
+
+body.dark-mode .application-sidebar {
+
+    background: #1e1e1e;
+
+    color: #ffffff;
+
+}
+
+
+body.dark-mode .application-sidebar-header {
+
+    background: #1e1e1e;
+
+    border-bottom-color: #333333;
+
+}
+
+
+body.dark-mode .application-sidebar-header h2 {
+
+    color: #ffffff;
+
+}
+
+
+/* ====================== */
+/* DARK MODE MENU ITEM */
+/* ====================== */
+
+body.dark-mode .application-menu-item {
+
+    background: #252525;
+
+    border-color: #333333;
+
+    color: #ffffff;
+
+}
+
+
+/* ====================== */
+/* CLOSE BUTTON */
+/* ====================== */
+
+body.dark-mode #closeApplicationMenu {
+
+    background: #333333;
+
+    color: #ffffff;
+
+}
+
+
+/* ====================== */
+/* SEARCH */
+/* ====================== */
+
+body.dark-mode .search-box input {
+
+    background: #252525;
+
+    color: #ffffff;
+
+}
+
+
+body.dark-mode .search-box input::placeholder {
+
+    color: #aaaaaa;
+
+}
+
+
+/* ====================== */
+/* PRODUCTS SECTION */
+/* ====================== */
+
+body.dark-mode .products-section {
+
+    color: #ffffff;
+
+}
+
+
+/* ====================== */
+/* PRODUCT CARDS */
+/* ====================== */
+
+body.dark-mode .card {
+
+    background: #1e1e1e;
+
+    color: #ffffff;
+
+}
+
+
+/* ====================== */
+/* FOOTER */
+/* ====================== */
+
+body.dark-mode footer {
+
+    background: #181818;
+
+    color: #ffffff;
+
+}

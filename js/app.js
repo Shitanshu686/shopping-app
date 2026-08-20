@@ -23,13 +23,35 @@ const logoutButton =
 const myOrdersButton =
     document.getElementById("myOrdersButton");
 
+const changePasswordButton =
+    document.getElementById("changePasswordButton");
 
+
+// ======================
+// AUTHENTICATION DATA
+// ======================
 
 const token =
     localStorage.getItem("token");
 
 const userData =
     localStorage.getItem("user");
+
+
+// ======================
+// LOGOUT FUNCTION
+// ======================
+
+function logoutUser() {
+
+    localStorage.removeItem("token");
+
+    localStorage.removeItem("user");
+
+    window.location.href =
+        "Login.html";
+
+}
 
 
 // ======================
@@ -108,6 +130,25 @@ if (token && userData) {
 
 
     // ======================
+    // CHANGE PASSWORD
+    // ======================
+
+    if (changePasswordButton) {
+
+        changePasswordButton.addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "ChangePassword.html";
+
+            }
+        );
+
+    }
+
+
+    // ======================
     // SHOW / HIDE PROFILE
     // ======================
 
@@ -124,40 +165,19 @@ if (token && userData) {
         }
     );
 
-    if (changePasswordButton) {
 
-        changePasswordButton.addEventListener(
+    // ======================
+    // PROFILE LOGOUT
+    // ======================
+
+    if (logoutButton) {
+
+        logoutButton.addEventListener(
             "click",
-            function () {
-
-                window.location.href =
-                    "ChangePassword.html";
-
-            }
+            logoutUser
         );
 
     }
-    // ======================
-    // LOGOUT
-    // ======================
-
-    logoutButton.addEventListener(
-        "click",
-        function () {
-
-            localStorage.removeItem(
-                "token"
-            );
-
-            localStorage.removeItem(
-                "user"
-            );
-
-            window.location.href =
-                "Login.html";
-
-        }
-    );
 
 }
 else {
