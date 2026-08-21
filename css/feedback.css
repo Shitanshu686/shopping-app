@@ -1,0 +1,573 @@
+/* =========================================================
+   FEEDBACK SECTION
+========================================================= */
+
+.feedback-section {
+    width: 95%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.feedback-container {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e1e4e8;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.feedback-header {
+    padding: 22px 25px;
+    border-bottom: 1px solid #e8eaed;
+    background: #fafbfc;
+}
+
+.feedback-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #212121;
+    font-weight: 600;
+}
+
+.feedback-header p {
+    margin: 7px 0 0;
+    color: #757575;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.feedback-form {
+    margin: 22px 25px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 9px;
+    background: #ffffff;
+}
+
+.feedback-form h3 {
+    margin: 0 0 14px;
+    font-size: 17px;
+    color: #212121;
+}
+
+.feedback-form textarea {
+    display: block;
+    width: 100%;
+    min-height: 90px;
+    padding: 12px 13px;
+
+    border: 1px solid #cfd3d7;
+    border-radius: 7px;
+
+    resize: vertical;
+    outline: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #333;
+    background: #fff;
+
+    transition: border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.feedback-form textarea:focus {
+    border-color: #2874f0;
+    box-shadow: 0 0 0 2px rgba(40, 116, 240, 0.12);
+}
+
+.feedback-form textarea::placeholder {
+    color: #999;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+#submitFeedbackButton {
+    margin-top: 12px;
+
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #2874f0;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+#submitFeedbackButton:hover {
+    background: #1f65d6;
+}
+
+
+/* =========================================================
+   LOGIN MESSAGE
+========================================================= */
+
+.feedback-login-message {
+    margin: 20px 25px;
+    padding: 13px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid #e1e4e8;
+    border-radius: 7px;
+
+    background: #f8f9fa;
+
+    color: #555;
+    font-size: 13px;
+}
+
+.feedback-login-message span {
+    flex: 1;
+}
+
+#feedbackLoginButton {
+    padding: 8px 18px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #2874f0;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#feedbackLoginButton:hover {
+    background: #1f65d6;
+}
+
+
+/* =========================================================
+   FEEDBACK LIST
+========================================================= */
+
+#feedbackList {
+    padding: 0 25px 25px;
+}
+
+.feedback-count {
+    padding: 4px 0 15px;
+
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FEEDBACK CARD
+========================================================= */
+
+.feedback-card {
+    position: relative;
+
+    padding: 17px 18px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #e4e6e8;
+    border-radius: 8px;
+
+    background: #fff;
+
+    transition: box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.feedback-card:hover {
+    border-color: #d4d8dc;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   USER
+========================================================= */
+
+.feedback-user {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 9px;
+}
+
+.feedback-user-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eaf2ff;
+
+    font-size: 14px;
+}
+
+.feedback-user strong {
+    color: #212121;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   COMMENT
+========================================================= */
+
+.feedback-comment {
+    margin: 0;
+
+    color: #424242;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.feedback-date {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   NO FEEDBACK
+========================================================= */
+
+.no-feedback {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border: 1px dashed #d5d8dc;
+    border-radius: 8px;
+
+    background: #fafafa;
+}
+
+.no-feedback p {
+    margin: 0 0 6px;
+
+    color: #444;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.no-feedback span {
+    color: #999;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.feedback-message {
+    margin-top: 9px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.feedback-message.success {
+    color: #188038;
+}
+
+.feedback-message.error {
+    color: #d93025;
+}
+
+.feedback-error {
+    padding: 14px;
+
+    border-radius: 7px;
+
+    background: #fff4f4;
+
+    color: #d93025;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .feedback-section {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .feedback-header {
+        padding: 18px;
+    }
+
+    .feedback-header h2 {
+        font-size: 21px;
+    }
+
+    .feedback-form {
+        margin: 18px;
+        padding: 16px;
+    }
+
+    #feedbackList {
+        padding: 0 18px 18px;
+    }
+
+    .feedback-login-message {
+        margin: 18px;
+        flex-wrap: wrap;
+    }
+
+    #feedbackLoginButton {
+        width: 100%;
+    }
+
+    #submitFeedbackButton {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   FEEDBACK ACTIONS
+========================================================= */
+
+.feedback-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.feedback-edit-button,
+.feedback-delete-button {
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #d9dce1;
+    background: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.feedback-edit-button {
+    color: #2874f0;
+}
+
+.feedback-edit-button:hover {
+    background: #eef4ff;
+    border-color: #2874f0;
+}
+
+.feedback-delete-button {
+    color: #d93025;
+}
+
+.feedback-delete-button:hover {
+    background: #fff1f0;
+    border-color: #d93025;
+}
+
+
+/* =========================================================
+   EDIT FEEDBACK
+========================================================= */
+
+.feedback-edit-area {
+    margin-top: 8px;
+}
+
+.feedback-edit-input {
+    width: 100%;
+    min-height: 85px;
+    padding: 10px 12px;
+
+    border: 1px solid #2874f0;
+    border-radius: 6px;
+
+    outline: none;
+    resize: vertical;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.feedback-edit-input:focus {
+    box-shadow:
+        0 0 0 2px rgba(40, 116, 240, 0.12);
+}
+
+
+/* =========================================================
+   EDIT BUTTONS
+========================================================= */
+
+.feedback-edit-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.feedback-save-button,
+.feedback-cancel-button {
+    padding: 7px 15px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.feedback-save-button {
+    border: none;
+    background: #2874f0;
+    color: white;
+}
+
+.feedback-save-button:hover {
+    background: #1f65d6;
+}
+
+.feedback-cancel-button {
+    border: 1px solid #d5d8dc;
+    background: white;
+    color: #555;
+}
+
+.feedback-cancel-button:hover {
+    background: #f5f5f5;
+}
+
+
+/* =========================================================
+   EDIT MESSAGE
+========================================================= */
+
+.feedback-edit-message {
+    margin-top: 7px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.feedback-edit-message.error {
+    color: #d93025;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .feedback-container {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .feedback-header {
+    background: #252525;
+    border-color: #333;
+}
+
+body.dark-mode .feedback-header h2,
+body.dark-mode .feedback-form h3,
+body.dark-mode .feedback-user strong {
+    color: #f1f1f1;
+}
+
+body.dark-mode .feedback-header p,
+body.dark-mode .feedback-date {
+    color: #aaa;
+}
+
+body.dark-mode .feedback-card {
+    background: #202020;
+    border-color: #363636;
+}
+
+body.dark-mode .feedback-comment {
+    color: #ddd;
+}
+
+body.dark-mode .feedback-form {
+    background: #202020;
+    border-color: #363636;
+}
+
+body.dark-mode .feedback-form textarea,
+body.dark-mode .feedback-edit-input {
+    background: #181818;
+    color: #eee;
+    border-color: #444;
+}
+
+body.dark-mode .feedback-login-message,
+body.dark-mode .no-feedback {
+    background: #252525;
+    border-color: #383838;
+}
+
+body.dark-mode .feedback-login-message,
+body.dark-mode .no-feedback p {
+    color: #ddd;
+}
+
+body.dark-mode .feedback-edit-button,
+body.dark-mode .feedback-cancel-button {
+    background: #252525;
+    border-color: #444;
+    color: #ddd;
+}

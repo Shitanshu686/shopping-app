@@ -172,33 +172,7 @@ async function placeOrder(orderData) {
     const responseData =
         await response.json();
 
-    // ======================
-    // PLACE ORDER
-    // ======================
 
-    async function placeOrder(orderData) {
-
-        const response =
-            await apiFetch(
-                "/orders",
-                {
-                    method: "POST",
-
-                    body: JSON.stringify(
-                        orderData
-                    )
-                }
-            );
-
-        if (!response) {
-            return null;
-        }
-
-        const responseData =
-            await response.json();
-
-        return responseData.data;
-    }
 
     return responseData.data;
 }

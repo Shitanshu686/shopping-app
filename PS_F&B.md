@@ -1,4 +1,4 @@
-# 🛒 ShopEase — Frontend + Backend Integrated Status
+# 🛒 ShopEase --- Frontend + Backend Integrated Status
 
 ## Project Overview
 
@@ -92,7 +92,8 @@ ShopEase is a full-stack e-commerce application developed using:
 
                     MySQL
 
-The frontend communicates with the Spring Boot backend through REST APIs.
+The frontend communicates with the Spring Boot backend through REST
+APIs.
 
 Authentication is handled using JWT.
 
@@ -128,9 +129,9 @@ Persistent Cart ✅   ✅   ✅   Complete
 
 Validation  ✅   ✅   ✅   Complete
 
-Exception Handling  —   ✅   ✅   Complete
+Exception Handling  ---   ✅   ✅   Complete
 
-DTO Layer   —   ✅   ✅   Complete
+DTO Layer   ---   ✅   ✅   Complete
 
 Wishlist    ✅   ✅   ✅   Complete
 
@@ -758,7 +759,7 @@ Allowed
 
 Status: ✅ Fully Integrated
 
-12. 🛒 Shopping Cart — Backend
+12. 🛒 Shopping Cart --- Backend
 
 Entities
 
@@ -840,7 +841,7 @@ MySQL
 
 Status: ✅ Backend Complete
 
-13. 🛒 Shopping Cart — Frontend Integration
+13. 🛒 Shopping Cart --- Frontend Integration
 
 Frontend
 
@@ -968,7 +969,8 @@ Status: ✅ Fully Integrated
 
 14. 💾 Persistent Cart
 
-Cart is stored in the backend database and is associated with the authenticated user.
+Cart is stored in the backend database and is associated with the
+authenticated user.
 
 Verified Flow
 
@@ -1401,24 +1403,39 @@ Status: ✅ Fully Integrated and Tested
 🟡 Partially Completed
 
 Admin Dashboard
+
 Admin Management
+
 Production Hardening
 
 🔴 Pending
 
 Payment Gateway
+
 User Management
+
 Inventory Management
+
 Pagination
+
 Sorting
+
 Advanced Search
+
 Image Upload
+
 Automated Testing
+
 Docker
+
 CI/CD
+
 Deployment
+
 Microservices
+
 Kafka / RabbitMQ
+
 Cloud Deployment
 
 🛒 Checkout & Orders Module
@@ -1426,61 +1443,103 @@ Cloud Deployment
 Frontend
 
 Checkout page
+
 Shipping address form
+
 Checkout validation
+
 Place order flow
+
 Order success page
+
 Order details page
+
 Order history page
+
 My Orders profile navigation
+
 Order-specific navigation
+
 Responsive checkout/order UI
 
 Backend Integration
 
 POST /orders
+
 GET /orders
+
 GET /orders/{id}
+
 Admin order status update
+
 User-specific order history
+
 Order status validation
+
 Order status transition handling
 
 Verified
 
 USER
+
 ↓
+
 Cart
+
 ↓
+
 Checkout
+
 ↓
+
 POST /orders
+
 ↓
+
 OrderSuccess.html
+
 ↓
+
 Order Details
 
 Profile
+
 ↓
+
 My Orders
+
 ↓
+
 Order History
+
 ↓
+
 Past Orders
+
 ↓
+
 View Order
+
 ↓
+
 Order Details
 
 Tested
 
 Multiple orders for the same user
+
 User-specific order history
+
 New user order isolation
+
 Order ID propagation
+
 Order status updates
+
 Invalid order status transition handling
+
 Checkout → OrderSuccess navigation
+
 OrderSuccess → OrderDetails navigation
 
 Status: ✅ Fully Integrated and Tested
@@ -1555,7 +1614,7 @@ Current Target: 🔄 Checkout
 
 🗺️ FUTURE ROADMAP
 
-Phase 1 — Core E-Commerce
+Phase 1 --- Core E-Commerce
 
  Product System
 
@@ -1579,7 +1638,7 @@ Phase 1 — Core E-Commerce
 
  Frontend ↔ Backend Cart Integration
 
-Phase 2 — Authentication & Security
+Phase 2 --- Authentication & Security
 
  Signup
 
@@ -1599,7 +1658,7 @@ Phase 2 — Authentication & Security
 
  Role-Based Authorization
 
-Phase 3 — Customer Features
+Phase 3 --- Customer Features
 
  Product Details
 
@@ -1623,7 +1682,7 @@ Phase 3 — Customer Features
 
  Order Status
 
-Phase 4 — Payment
+Phase 4 --- Payment
 
  Razorpay Integration
 
@@ -1633,7 +1692,7 @@ Phase 4 — Payment
 
  Order-Payment Integration
 
-Phase 5 — Admin
+Phase 5 --- Admin
 
  Admin Authentication
 
@@ -1651,7 +1710,7 @@ Phase 5 — Admin
 
  Inventory Management
 
-Phase 6 — Production Backend
+Phase 6 --- Production Backend
 
  Logging
 
@@ -1671,7 +1730,7 @@ Phase 6 — Production Backend
 
  Production Hardening
 
-Phase 7 — DevOps
+Phase 7 --- DevOps
 
  Dockerfile
 
@@ -1689,7 +1748,7 @@ Phase 7 — DevOps
 
  Production Deployment
 
-Phase 8 — Advanced Architecture
+Phase 8 --- Advanced Architecture
 
  Microservices
 
@@ -1835,4 +1894,5 @@ Advanced Architecture
 
 The project is being developed module-by-module with frontend,
 
-backend, API integration, testing, and Git commits for each major feature
+backend, API integration, testing, and Git commits for each major
+feature
