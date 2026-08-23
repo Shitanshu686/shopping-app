@@ -144,6 +144,7 @@ async function fetchCart() {
 // ORDER API
 // ======================
 
+
 // ======================
 // PLACE ORDER
 // ======================
@@ -174,7 +175,20 @@ async function placeOrder(orderData) {
 
 
 
-    return responseData.data;
+    const order =
+        responseData.data;
+
+    if (!order) {
+        return null;
+    }
+
+    return {
+        orderId:
+            order.orderId,
+
+        totalAmount:
+            order.totalAmount
+    };
 }
 
 // ======================
@@ -311,4 +325,111 @@ async function removeCartItem(
         await response.json();
 
     return responseData.data;
+}
+// ======================
+// PAYMENT API
+// ======================
+
+
+// ======================
+// CREATE PAYMENT ORDER
+// ======================
+
+async function createPaymentOrder(
+    orderId,
+    amount
+) {
+
+    const response =
+        await apiFetch(
+            `/payments/create?orderId=${orderId}&amount=${amount}`,
+            {
+                method: "POST"
+            }
+        );
+
+
+    if (!response) {
+        return null;
+    }
+
+
+    const responseData =
+        await response.json();
+
+
+    if (!responseData.success) {
+
+        console.error(
+            "Payment order creation failed:",
+            responseData.message
+        );
+
+        return null;
+    }
+
+
+    return responseData;
+}
+
+
+// ======================
+// VERIFY PAYMENT
+// ======================
+
+async function verifyPayment(
+    razorpayOrderId,
+    razorpayPaymentId,
+    razorpaySignature
+) {
+
+    const response =
+        await apiFetch(
+            `/payments/verify?razorpayOrderId=${encodeURIComponent(razorpayOrderId)}&razorpayPaymentId=${encodeURIComponent(razorpayPaymentId)}&razorpaySignature=${encodeURIComponent(razorpaySignature)}`,
+            {
+                method: "POST"
+            }
+        );
+
+
+    if (!response) {
+        return null;
+    }
+
+
+    const responseData =
+        await response.json();
+
+
+    return responseData;
+}
+// ======================
+// MARK PAYMENT AS FAILED
+// ======================
+
+async function markPaymentAsFailed(
+    razorpayOrderId
+) {
+
+    const response =
+        await apiFetch(
+            `/payments/fail?razorpayOrderId=${encodeURIComponent(
+                razorpayOrderId
+            )}`,
+            {
+                method: "POST"
+            }
+        );
+
+
+    if (!response) {
+        return null;
+    }
+
+
+    const responseData =
+        await response.json();
+
+
+    return responseData;
 }
