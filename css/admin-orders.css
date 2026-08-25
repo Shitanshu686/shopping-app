@@ -1,0 +1,265 @@
+.order-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+.order-modal.show {
+    display: flex;
+}
+
+.order-modal-content {
+    width: 90%;
+    max-width: 600px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.order-modal-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.order-modal-header h2 {
+    margin: 0;
+}
+
+.close-order-modal {
+    border: none;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.order-detail-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.order-detail-row strong {
+    font-weight: 600;
+}
+
+.order-status-select {
+    margin-left: 6px;
+
+    padding: 7px 9px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background: white;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   ADMIN ORDERS PAGE
+========================= */
+
+.admin-orders {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 35px 25px 60px;
+}
+
+.admin-orders-header {
+    margin-bottom: 25px;
+}
+
+.admin-orders-header h2 {
+    margin: 0 0 6px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.admin-orders-header p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+
+/* =========================
+   ORDERS TABLE
+========================= */
+
+.orders-section {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.orders-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.orders-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.orders-table-container th {
+    padding: 15px 16px;
+    background: #f7f8fa;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.orders-table-container td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #eeeeee;
+    vertical-align: middle;
+}
+
+.orders-table-container tbody tr:hover {
+    background: #fafafa;
+}
+
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.view-order-button {
+    padding: 8px 14px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.view-order-button:hover {
+    background: #1d4ed8;
+}
+
+.view-order-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   STATUS SELECT
+========================= */
+
+.order-status-select {
+    min-width: 120px;
+
+    padding: 8px 10px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    background: white;
+    color: #333;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+.order-status-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.order-message {
+    margin-top: 15px;
+
+    padding: 10px 14px;
+
+    color: #555;
+    font-size: 14px;
+}
+
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+#adminLogoutButton {
+    padding: 9px 17px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #dc3545;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+#adminLogoutButton:hover {
+    background: #c82333;
+}
+
+#adminLogoutButton:active {
+    transform: scale(0.97);
+}

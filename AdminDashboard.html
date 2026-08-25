@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | ShopEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+
+<body>
+    <!--======================-->
+    <!-- ADMIN HEADER -->
+    <!--======================-->
+    <header>
+        <div class="container navbar">
+            <div class="logo-section"><img src="images/logo.png" class="logo">
+                <h1>ShopEase Admin</h1>
+            </div>
+            <nav><a href="index.html">Home </a><button id="adminLogoutButton">Logout </button></nav>
+        </div>
+    </header>
+    <!--======================-->
+    <!-- ADMIN DASHBOARD -->
+    <!--======================-->
+    <main class="admin-dashboard">
+        <div class="admin-dashboard-header">
+            <div>
+                <h2>Admin Dashboard</h2>
+                <p>Manage and monitor your ShopEase store. </p>
+            </div>
+        </div>
+        <!--======================-->
+        <!-- DASHBOARD CARDS -->
+        <!--======================-->
+        <section class="dashboard-cards">
+            <!-- PRODUCTS -->
+            <div class="dashboard-card">
+                <div class="dashboard-card-icon">📦 </div>
+                <div>
+                    <h3>Total Products</h3>
+                    <p id="totalProducts">0 </p>
+                </div>
+            </div>
+            <!-- USERS -->
+            <div class="dashboard-card">
+                <div class="dashboard-card-icon">👥 </div>
+                <div>
+                    <h3>Total Users</h3>
+                    <p id="totalUsers">0 </p>
+                </div>
+            </div>
+            <!-- ORDERS -->
+            <div class="dashboard-card">
+                <div class="dashboard-card-icon">🛒 </div>
+                <div>
+                    <h3>Total Orders</h3>
+                    <p id="totalOrders">0 </p>
+                </div>
+            </div>
+            <!-- REVENUE -->
+            <div class="dashboard-card">
+                <div class="dashboard-card-icon">💰 </div>
+                <div>
+                    <h3>Total Revenue</h3>
+                    <p>₹<span id="totalRevenue">0 </span></p>
+                </div>
+            </div>
+        </section>
+        <!-- ====================== -->
+        <!-- INVENTORY ALERTS -->
+        <!-- ====================== -->
+
+        <section class="inventory-alerts">
+
+            <h2>Inventory Alerts</h2>
+
+            <div class="inventory-alert-grid">
+
+                <!-- LOW STOCK -->
+
+                <div class="inventory-alert-card low-stock-alert">
+
+                    <div class="inventory-alert-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+
+                        <h3>Low Stock</h3>
+
+                        <p id="lowStockProducts">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OUT OF STOCK -->
+
+                <div class="inventory-alert-card out-stock-alert">
+
+                    <div class="inventory-alert-icon">
+                        ❌
+                    </div>
+
+                    <div>
+
+                        <h3>Out of Stock</h3>
+
+                        <p id="outOfStockProducts">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ====================== -->
+        <!-- RECENT ORDERS -->
+        <!-- ====================== -->
+
+        <section class="recent-orders">
+
+            <div class="recent-orders-header">
+
+                <div>
+
+                    <h2>Recent Orders</h2>
+
+                    <p>
+                        Latest customer orders
+                    </p>
+
+                </div>
+
+                <button onclick="openOrderManagement()">
+
+                    View All Orders
+
+                </button>
+
+            </div>
+
+
+            <div class="recent-orders-table-wrapper">
+
+                <table class="recent-orders-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Order ID</th>
+
+                            <th>Customer</th>
+
+                            <th>Total</th>
+
+                            <th>Status</th>
+
+                            <th>Date</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="recentOrdersBody">
+
+                        <tr>
+
+                            <td colspan="5">
+                                Loading recent orders...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+        <!--======================-->
+        <!-- ADMIN QUICK ACTIONS -->
+        <!--======================-->
+        <section class="admin-actions">
+            <h2>Quick Actions</h2>
+            <div class="admin-action-grid"><button onclick="openProductManagement()">📦
+                    <span>Product Management </span></button><button onclick="openUserManagement()">👥 <span>User
+                        Management </span></button><button onclick="openOrderManagement()">🧾 <span>Order
+                        Management </span></button><button onclick="openInventoryManagement()">📊
+                    <span>Inventory Management </span></button>
+            </div>
+        </section>
+        <!--======================-->
+        <!-- DASHBOARD STATUS -->
+        <!--======================-->
+        <div id="dashboardMessage" class="dashboard-message">Loading
+            dashboard... </div>
+    </main>
+    <!--======================-->
+    <!-- JAVASCRIPT -->
+    <!--======================-->
+    <script src="js/api.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+</body>
+
+</html>

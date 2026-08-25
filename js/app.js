@@ -101,6 +101,16 @@ if (token && userData) {
         adminPanelButton.style.display =
             "block";
 
+        adminPanelButton.addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "AdminDashboard.html";
+
+            }
+        );
+
     }
     else {
 

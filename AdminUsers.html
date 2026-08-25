@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase - User Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/admin-users.css">
+
+</head>
+
+<body>
+
+    <!-- ====================== -->
+    <!-- ADMIN HEADER -->
+    <!-- ====================== -->
+
+    <header>
+
+        <div class="admin-header">
+
+            <div>
+
+                <h1>ShopEase Admin</h1>
+
+                <p>User Management</p>
+
+            </div>
+
+            <nav>
+
+                <a href="AdminDashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="AdminProducts.html">
+                    Products
+                </a>
+
+                <button id="adminLogoutButton">
+                    Logout
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ====================== -->
+    <!-- USER MANAGEMENT -->
+    <!-- ====================== -->
+
+    <main class="admin-users">
+
+        <div class="admin-users-header">
+
+            <div>
+
+                <h2>User Management</h2>
+
+                <p>
+                    Manage and monitor ShopEase users.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ====================== -->
+        <!-- SEARCH -->
+        <!-- ====================== -->
+
+        <div class="user-search">
+
+            <input type="text" id="userSearchInput" placeholder="Search users by name or email...">
+
+        </div>
+
+
+        <!-- ====================== -->
+        <!-- USERS TABLE -->
+        <!-- ====================== -->
+
+        <div class="user-table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Email</th>
+
+                        <th>Role</th>
+
+                        <th>Dark Mode</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="userTableBody">
+
+                    <tr>
+
+                        <td colspan="6">
+                            Loading users...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- ====================== -->
+        <!-- STATUS MESSAGE -->
+        <!-- ====================== -->
+
+        <div id="userManagementMessage" class="user-management-message">
+        </div>
+
+    </main>
+
+
+    <!-- ====================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ====================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/admin-users.js"></script>
+
+</body>
+
+</html>

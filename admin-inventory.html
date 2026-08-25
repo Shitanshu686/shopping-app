@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inventory Management | ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/admin-inventory.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ====================== -->
+    <!-- ADMIN HEADER -->
+    <!-- ====================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="logo-section">
+
+                <img src="images/logo.png" class="logo">
+
+                <h1>ShopEase Admin</h1>
+
+            </div>
+
+
+            <nav>
+
+                <a href="admin-dashboard.html">
+                    Dashboard
+                </a>
+
+                <button id="adminLogoutButton">
+                    Logout
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ====================== -->
+    <!-- INVENTORY MANAGEMENT -->
+    <!-- ====================== -->
+
+    <main class="admin-inventory">
+
+        <div class="admin-inventory-header">
+
+            <div>
+
+                <h2>Inventory Management</h2>
+
+                <p>
+                    Monitor and manage product stock.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ====================== -->
+        <!-- INVENTORY TABLE -->
+        <!-- ====================== -->
+
+        <section class="inventory-section">
+
+            <div class="inventory-table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Product</th>
+
+                            <th>Category</th>
+
+                            <th>Price</th>
+
+                            <th>Stock</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="inventoryTableBody">
+
+                        <tr>
+
+                            <td colspan="7">
+                                Loading inventory...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <div id="inventoryMessage" class="inventory-message">
+        </div>
+
+    </main>
+
+
+
+    <!-- ====================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ====================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/admin-inventory.js"></script>
+
+</body>
+
+</html>

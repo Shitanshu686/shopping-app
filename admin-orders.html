@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Management | ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/admin-orders.css">
+
+</head>
+
+<body>
+
+    <!-- ====================== -->
+    <!-- ADMIN HEADER -->
+    <!-- ====================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="logo-section">
+
+                <img src="images/logo.png" class="logo">
+
+                <h1>ShopEase Admin</h1>
+
+            </div>
+
+            <nav>
+
+                <a href="admin-dashboard.html">
+                    Dashboard
+                </a>
+
+                <button id="adminLogoutButton">
+                    Logout
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ====================== -->
+    <!-- ORDER MANAGEMENT -->
+    <!-- ====================== -->
+
+    <main class="admin-orders">
+
+        <div class="admin-orders-header">
+
+            <div>
+
+                <h2>Order Management</h2>
+
+                <p>
+                    Manage and monitor customer orders.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ====================== -->
+        <!-- ORDER TABLE -->
+        <!-- ====================== -->
+
+        <section class="orders-section">
+
+            <div class="orders-table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Order ID</th>
+
+                            <th>Customer</th>
+
+                            <th>Phone</th>
+
+                            <th>Total</th>
+
+                            <th>Status</th>
+
+                            <th>Date</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="orderTableBody">
+
+                        <tr>
+
+                            <td colspan="7">
+                                Loading orders...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+            <!-- ====================== -->
+            <!-- ORDER DETAILS MODAL -->
+            <!-- ====================== -->
+
+            <div id="orderDetailsModal" class="order-modal">
+
+                <div class="order-modal-content">
+
+                    <div class="order-modal-header">
+
+                        <h2>Order Details</h2>
+
+                        <button class="close-order-modal" onclick="closeOrderModal()">
+
+                            ×
+
+                        </button>
+
+                    </div>
+
+                    <div id="orderDetailsContent">
+
+                        <!-- Order details will be loaded here -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div id="orderMessage" class="order-message">
+        </div>
+
+    </main>
+
+
+    <!-- ====================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ====================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/admin-orders.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Management | ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/admin-products.css">
+
+</head>
+
+<body>
+
+    <!-- ====================== -->
+    <!-- ADMIN HEADER -->
+    <!-- ====================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="logo-section">
+
+                <img src="images/logo.png" class="logo">
+
+                <h1>ShopEase Admin</h1>
+
+            </div>
+
+            <nav>
+
+                <a href="AdminDashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="Shopping.html">
+                    Home
+                </a>
+
+                <button id="adminLogoutButton">
+                    Logout
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ====================== -->
+    <!-- PRODUCT MANAGEMENT -->
+    <!-- ====================== -->
+
+    <main class="admin-products">
+
+        <div class="admin-products-header">
+
+            <div>
+
+                <h2>Product Management</h2>
+
+                <p>
+                    Manage your ShopEase products.
+                </p>
+
+            </div>
+
+            <button id="addProductButton" class="add-product-button">
+
+                + Add Product
+
+            </button>
+
+        </div>
+
+
+        <!-- ====================== -->
+        <!-- SEARCH -->
+        <!-- ====================== -->
+
+        <div class="product-search">
+
+            <input type="text" id="productSearchInput" placeholder="Search products...">
+
+        </div>
+
+
+        <!-- ====================== -->
+        <!-- PRODUCT TABLE -->
+        <!-- ====================== -->
+
+        <section class="product-table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Image</th>
+
+                        <th>Name</th>
+
+                        <th>Brand</th>
+
+                        <th>Category</th>
+
+                        <th>Price</th>
+
+                        <th>Stock</th>
+
+                        <th>Actions</th>
+
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="productTableBody">
+
+                    <tr>
+
+                        <td colspan="8">
+                            Loading products...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- ====================== -->
+        <!-- PRODUCT FORM -->
+        <!-- ====================== -->
+
+        <section id="productFormSection" class="product-form-section">
+
+            <div class="product-form-header">
+
+                <h2 id="productFormTitle">
+                    Add Product
+                </h2>
+
+                <button id="closeProductFormButton">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+
+            <form id="productForm">
+
+
+                <!-- PRODUCT NAME -->
+
+                <div class="form-group">
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+                    <input type="text" id="productName" required>
+
+                </div>
+
+
+                <!-- BRAND -->
+
+                <div class="form-group">
+
+                    <label for="productBrand">
+                        Brand
+                    </label>
+
+                    <input type="text" id="productBrand" required>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="productDescription">
+                        Description
+                    </label>
+
+                    <textarea id="productDescription" rows="4" required></textarea>
+
+                </div>
+
+
+                <!-- PRICE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="productPrice">
+                            Price
+                        </label>
+
+                        <input type="number" id="productPrice" min="0" step="0.01" required>
+
+                    </div>
+
+
+                    <!-- OLD PRICE -->
+
+                    <div class="form-group">
+
+                        <label for="productOldPrice">
+                            Old Price
+                        </label>
+
+                        <input type="number" id="productOldPrice" min="0" step="0.01">
+
+                    </div>
+
+                </div>
+
+
+                <!-- RATING + STOCK -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="productRating">
+                            Rating
+                        </label>
+
+                        <input type="number" id="productRating" min="0" max="5" step="0.1">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="productStock">
+                            Stock
+                        </label>
+
+                        <input type="number" id="productStock" min="0" required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="productCategory">
+                        Category
+                    </label>
+
+                    <input type="text" id="productCategory" required>
+
+                </div>
+
+
+                <!-- IMAGE -->
+                <div class="form-group">
+
+                    <label for="productImage">
+                        Image URL
+                    </label>
+
+                    <input type="text" id="productImage" required>
+
+                </div>
+
+
+                <!-- FORM ACTIONS -->
+
+                <div class="product-form-actions">
+
+                    <button type="submit" id="saveProductButton">
+
+                        Save Product
+
+                    </button>
+
+                    <button type="button" id="cancelProductButton">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ====================== -->
+        <!-- MESSAGE -->
+        <!-- ====================== -->
+
+        <div id="productMessage" class="product-message">
+
+        </div>
+
+    </main>
+
+
+    <!-- ====================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ====================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/admin-products.js"></script>
+
+</body>
+
+</html>

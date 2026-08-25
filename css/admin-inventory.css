@@ -1,0 +1,237 @@
+/* =========================
+   ADMIN INVENTORY PAGE
+========================= */
+
+.admin-inventory {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 35px 25px 60px;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.admin-inventory-header {
+    margin-bottom: 25px;
+}
+
+.admin-inventory-header h2 {
+    margin: 0 0 6px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.admin-inventory-header p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+
+/* =========================
+   INVENTORY TABLE CARD
+========================= */
+
+.inventory-section {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.inventory-table-container table {
+    width: 100%;
+    min-width: 850px;
+
+    border-collapse: collapse;
+}
+
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+.inventory-table-container th {
+    padding: 15px 16px;
+
+    background: #f7f8fa;
+
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* =========================
+   TABLE CELLS
+========================= */
+
+.inventory-table-container td {
+    padding: 14px 16px;
+
+    color: #333;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    vertical-align: middle;
+}
+
+.inventory-table-container tbody tr {
+    transition: background 0.2s ease;
+}
+
+.inventory-table-container tbody tr:hover {
+    background: #fafafa;
+}
+
+
+/* =========================
+   STOCK STATUS
+========================= */
+
+.stock-status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* IN STOCK */
+
+.in-stock {
+    background: #ecfdf3;
+    color: #15803d;
+}
+
+
+/* LOW STOCK */
+
+.low-stock {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+
+/* OUT OF STOCK */
+
+.out-of-stock {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+
+/* =========================
+   UPDATE BUTTON
+========================= */
+
+.update-stock-button {
+    padding: 8px 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.update-stock-button:hover {
+    background: #1d4ed8;
+}
+
+.update-stock-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.inventory-message {
+    margin-top: 15px;
+
+    min-height: 20px;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+#adminLogoutButton {
+    padding: 9px 17px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #dc3545;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+#adminLogoutButton:hover {
+    background: #c82333;
+}
+
+#adminLogoutButton:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .admin-inventory {
+        padding: 25px 15px 40px;
+    }
+
+    .admin-inventory-header h2 {
+        font-size: 25px;
+    }
+
+    .inventory-section {
+        border-radius: 9px;
+    }
+
+}
