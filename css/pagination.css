@@ -1,0 +1,108 @@
+/* =========================
+   PRODUCT PAGINATION
+========================= */
+
+#pagination {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 35px 0 20px;
+
+}
+
+
+/* =========================
+   PAGINATION BUTTON
+========================= */
+
+#pagination button {
+
+    min-width: 40px;
+
+    height: 40px;
+
+    padding: 0 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+#pagination button:hover {
+
+    background: #f1f3f5;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================
+   ACTIVE PAGE
+========================= */
+
+#pagination button.active {
+
+    background: #333;
+
+    color: #ffffff;
+
+    border-color: #333;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #pagination {
+
+        gap: 6px;
+
+        margin-top: 25px;
+
+    }
+
+    #pagination button {
+
+        min-width: 36px;
+
+        height: 36px;
+
+        padding: 0 9px;
+
+        font-size: 13px;
+
+    }
+
+}

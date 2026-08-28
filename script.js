@@ -46,18 +46,27 @@ function loadPendingCartItem() {
         "✅ " + item.name + " added to cart"
     );
 }
-async function loadProducts() {
+async function loadProducts(page = 0) {
 
     try {
 
-        const products = await fetchProducts();
+        const response =
+            await fetchProducts(
+                page,
+                20,
+                currentSortBy,
+                currentSortDirection
+            );
 
-        renderProducts(products);
+        renderProducts(response.content);
+
+        renderPagination(
+            response.number,
+            response.totalPages
+        );
 
         attachCartEvents();
         syncWishlistButtons();
-
-
 
     }
 
@@ -69,13 +78,12 @@ async function loadProducts() {
         );
 
         showToast(
-            "❌ Unable to load products"
+            "❌ Backend not running.."
         );
 
     }
 
 }
-
 // ======================
 // ADD TO CART
 // ======================

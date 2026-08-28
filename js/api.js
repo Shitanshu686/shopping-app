@@ -108,18 +108,27 @@ async function apiFetch(
 // FETCH PRODUCTS
 // ======================
 
-async function fetchProducts() {
+async function fetchProducts(
+    page = 0,
+    size = 20,
+    sortBy = "",
+    direction = ""
+) {
+    let endpoint = `/products?page=${page}&size=${size}`;
 
-    const response =
-        await apiFetch("/products");
+    // Spring Boot Pageable standard format: sort=fieldName,asc/desc
+    if (sortBy && direction) {
+        endpoint += `&sort=${sortBy},${direction}`;
+    }
 
+    const response = await apiFetch(endpoint);
 
-    const responseData =
-        await response.json();
+    if (!response || !response.ok) {
+        return { content: [], number: 0, totalPages: 0 };
+    }
 
-
+    const responseData = await response.json();
     return responseData.data;
-
 }
 
 // ======================

@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/categories.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/product-card.css">
+    <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/sorting.css">
 
     <link rel="stylesheet" href="css/wishlist.css?v=2">
     <link rel="stylesheet" href="css/cart.css">
@@ -167,8 +169,8 @@
                             <!-- ====================== -->
 
                             <button id="adminPanelButton">
-                                <onclick="window.location.href='AdminDashboard.html'>
-                                    Admin Panel
+
+                                Admin Panel
                             </button>
 
                         </div>
@@ -227,10 +229,43 @@
     <section class="products-section">
 
         <h2>Featured Products</h2>
+        <div class="product-controls">
+
+            <label for="sortProducts">
+                Sort By:
+            </label>
+
+            <select id="sortProducts">
+
+                <option value="">
+                    Default
+                </option>
+
+                <option value="price,asc">
+                    Price: Low to High
+                </option>
+
+                <option value="price,desc">
+                    Price: High to Low
+                </option>
+
+                <option value="rating,desc">
+                    Rating: High to Low
+                </option>
+
+                <option value="name,asc">
+                    Name: A to Z
+                </option>
+
+            </select>
+
+        </div>
 
         <div class="Products" id="products">
 
         </div>
+
+        <div id="pagination"></div>
 
     </section>
 
@@ -314,6 +349,7 @@
     <script src="js/api.js"></script>
     <script src="js/wishlist.js"></script>
     <script src="js/product.js"></script>
+    <script src="js/sorting.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/category.js"></script>
     <script src="script.js"></script>

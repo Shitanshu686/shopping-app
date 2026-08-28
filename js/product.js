@@ -118,3 +118,28 @@ function renderProducts(products) {
     });
 
 }
+// ======================
+// PAGINATION
+// ======================
+function renderPagination(currentPage, totalPages) {
+    const pagination = document.getElementById("pagination");
+    if (!pagination) return;
+
+    pagination.innerHTML = "";
+
+    for (let i = 0; i < totalPages; i++) {
+        const button = document.createElement("button");
+        button.textContent = i + 1;
+
+        // loadProducts() internally script.js ke currentSortBy/currentSortDirection ko use karega
+        button.onclick = function () {
+            loadProducts(i);
+        };
+
+        if (i === currentPage) {
+            button.classList.add("active");
+        }
+
+        pagination.appendChild(button);
+    }
+}
