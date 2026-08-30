@@ -1,0 +1,403 @@
+/* ==============================
+   FILTER SECTION
+================================= */
+
+.filters-section {
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 35px auto;
+
+    padding: 25px 30px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid #eeeeee;
+
+}
+
+
+/* ==============================
+   FILTER HEADER
+================================= */
+
+.filters-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+
+.filters-header h2 {
+
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #222222;
+
+}
+
+
+/* ==============================
+   CLEAR BUTTON
+================================= */
+
+#clearFiltersButton {
+
+    padding: 9px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #f1f3f5;
+
+    color: #333333;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+#clearFiltersButton:hover {
+
+    background: #e2e6ea;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ==============================
+   FILTER CONTAINER
+================================= */
+
+.filters-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* ==============================
+   FILTER GROUP
+================================= */
+
+.filter-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.filter-group label {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #444444;
+
+}
+
+
+/* ==============================
+   INPUTS & SELECT
+================================= */
+
+.filter-group input,
+.filter-group select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 13px;
+
+    border: 1px solid #d8dce1;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #333333;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.filter-group input::placeholder {
+
+    color: #999999;
+
+}
+
+
+.filter-group input:focus,
+.filter-group select:focus {
+
+    border-color: #2874f0;
+
+    box-shadow:
+        0 0 0 3px rgba(40, 116, 240, 0.12);
+
+}
+
+
+/* ==============================
+   APPLY BUTTON
+================================= */
+
+.apply-filters-btn {
+
+    display: block;
+
+    margin: 25px auto 0;
+
+    padding: 12px 30px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2874f0;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(40, 116, 240, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.apply-filters-btn:hover {
+
+    background: #1d5fc4;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(40, 116, 240, 0.30);
+
+}
+
+
+.apply-filters-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* ==============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+
+    .filters-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .filters-section {
+
+        width: 88%;
+
+        padding: 20px;
+
+    }
+
+
+    .filters-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .filters-header {
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .filters-header h2 {
+
+        font-size: 20px;
+
+    }
+
+}
+
+/* ==============================
+   NO PRODUCTS
+   ============================== */
+
+.no-products {
+
+    width: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+}
+
+.no-products-icon {
+
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+}
+
+.no-products h2 {
+
+    margin: 0 0 10px;
+
+    font-size: 26px;
+
+}
+
+.no-products p {
+
+    margin: 0 0 25px;
+
+    font-size: 16px;
+
+    opacity: 0.7;
+
+}
+
+.no-products-btn {
+
+    padding: 11px 22px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+}
+
+/* ==============================
+   ACTIVE FILTERS
+   ============================== */
+
+#activeFilters {
+
+    margin: 15px 0;
+
+}
+
+.active-filters-title {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+
+}
+
+.active-filter-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+.active-filter {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #f1f3f5;
+
+    border: 1px solid #ddd;
+
+    font-size: 14px;
+
+}

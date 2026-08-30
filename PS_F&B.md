@@ -1,16 +1,21 @@
-🛒 ShopEase — Full-Stack E-Commerce
-🚀 Project Overview
+# 🛒 ShopEase — Full-Stack E-Commerce
+
+## 🚀 Project Overview
 
 ShopEase is a full-stack e-commerce application built with:
 
-Frontend: HTML, CSS, JavaScript, Fetch API, LocalStorage
-Backend: Java, Spring Boot, Spring MVC, Spring Data JPA, Hibernate
-Security: Spring Security, JWT, BCrypt
-Database: MySQL
-Payments: Razorpay
-Tools: Eclipse, Postman, XAMPP, Git, GitHub
+- Frontend: HTML, CSS, JavaScript, Fetch API, LocalStorage
+- Backend: Java, Spring Boot, Spring MVC, Spring Data JPA, Hibernate
+- Security: Spring Security, JWT, BCrypt
+- Database: MySQL
+- Payments: Razorpay
+- Tools: Eclipse, Postman, XAMPP, Git, GitHub
 
-🏗️ Architecture
+---
+
+# 🏗️ Architecture
+
+```text
 Frontend
 HTML / CSS / JavaScript
         ↓
@@ -55,6 +60,71 @@ Order Management — Admin	✅ Complete
 Inventory Management — Admin	✅ Complete
 Inventory Alerts	✅ Complete
 Application Logging	✅ Complete
+Pagination	✅ Complete
+Sorting	✅ Complete
+Advanced Search	✅ Complete
+Product Filtering	✅ Complete
+Multiple Filters	✅ Complete
+Filter + Sorting Integration	✅ Complete
+Filter + Pagination Integration	✅ Complete
+Empty Search / Filter Result Handling	✅ Complete
+Active Filter UI	✅ Complete
+🔎 Search & Filtering
+
+Implemented advanced product discovery features including:
+
+Product name search
+Category filtering
+Brand filtering
+Minimum price filtering
+Maximum price filtering
+Minimum rating filtering
+Multiple filters simultaneously
+Backend-powered filtering
+Search + filter combination
+Filter + sorting combination
+Filter + pagination combination
+Empty-result handling
+Active filter display
+Clear All Filters functionality
+
+Example:
+
+Category = Mobiles
+Brand = Samsung
+Price = ₹50,000 - ₹1,00,000
+Rating = 4.8+
+Sorting = Low → High
+
+All selected conditions are processed together by the backend.
+
+📄 Pagination & Sorting
+
+Implemented server-side pagination and sorting using Spring Data JPA.
+
+Pagination
+
+Supports:
+
+Page number
+Page size
+Total elements
+Total pages
+First / Last page information
+Sorting
+
+Supports dynamic sorting using:
+
+sort=field,direction
+
+Example:
+
+sort=price,asc
+sort=price,desc
+sort=rating,desc
+
+Filtering, sorting and pagination work together without losing the active filter state.
+
 👨‍💼 Admin Dashboard
 
 Implemented:
@@ -124,32 +194,70 @@ BCrypt Password Hashing
 Protected APIs
 Role-Based Authorization
 Backend Payment Signature Verification
-User-specific Cart, Orders and Wishlist
-🟢 Completed
-
-Core E-Commerce → Authentication → Security → Customer Features → Payments → Admin Features → Logging
-
+User-specific Cart
+User-specific Orders
+User-specific Wishlist
+🟢 Completed Development Areas
+Core E-Commerce
+       ↓
+Authentication
+       ↓
+Security
+       ↓
+Customer Features
+       ↓
+Payments
+       ↓
+Admin Features
+       ↓
+Logging
+       ↓
+Pagination & Sorting
+       ↓
+Advanced Search & Filtering
 🚀 Next Development
 Automated Testing
 API Documentation
-Pagination & Sorting
-Advanced Search
 Image Upload
 Docker
 CI/CD
 Deployment
 Cloud Deployment
 🗺️ Development Roadmap
-Phase 1 → Core E-Commerce          ✅
-Phase 2 → Authentication & Security ✅
-Phase 3 → Customer Features        ✅
-Phase 4 → Razorpay Payment         ✅
-Phase 5 → Admin Features           ✅
-Phase 6 → Production Hardening     🔄
-Phase 7 → DevOps & Deployment      🔴
-Phase 8 → Advanced Architecture    🔴
+Phase	Description	Status
+Phase 1	Core E-Commerce	✅
+Phase 2	Authentication & Security	✅
+Phase 3	Customer Features	✅
+Phase 4	Razorpay Payment	✅
+Phase 5	Admin Features	✅
+Phase 6	Search, Filtering, Pagination & Sorting	✅
+Phase 7	Production Hardening	🔄
+Phase 8	DevOps & Deployment	🔴
+Phase 9	Advanced Architecture	🔴
 🎯 Current Goal
 
-Build ShopEase into a production-oriented full-stack e-commerce application using Java, Spring Boot, MySQL, JWT Security and Razorpay, followed by automated testing, API documentation, Docker, CI/CD and deployment.
+Build ShopEase into a production-oriented full-stack e-commerce application using:
 
-Developer: Shitanshu Jha
+Java
+Spring Boot
+Spring MVC
+Spring Data JPA
+Hibernate
+MySQL
+Spring Security
+JWT
+Razorpay
+
+The next focus is improving production readiness through:
+
+Automated testing
+API documentation
+Image upload
+Docker
+CI/CD
+Deployment
+Cloud infrastructure
+👨‍💻 Developer
+
+Shitanshu Jha
+

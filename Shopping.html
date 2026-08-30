@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/categories.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/product-card.css">
+    <link rel="stylesheet" href="css/filter.css">
     <link rel="stylesheet" href="css/pagination.css">
     <link rel="stylesheet" href="css/sorting.css">
 
@@ -223,7 +224,175 @@
         <button data-category="BAT">🏏 Sports</button>
 
     </section>
+    <!-- ================= FILTERS ================= -->
 
+    <section class="filters-section">
+
+        <div class="filters-header">
+
+            <h2>🔎 Filter Products</h2>
+
+            <button type="button" id="clearFiltersButton">
+                Clear All
+            </button>
+
+        </div>
+
+        <div class="filters-container">
+
+            <!-- NAME -->
+
+            <div class="filter-group">
+
+                <label for="filterName">
+                    Product Name
+                </label>
+
+                <input type="text" id="filterName" placeholder="Search by name...">
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="filter-group">
+
+                <label for="filterCategory">
+                    Category
+                </label>
+
+                <select id="filterCategory">
+
+                    <option value="">
+                        All Categories
+                    </option>
+
+                    <option value="Mobiles">
+                        Mobiles
+                    </option>
+
+                    <option value="Smartphones">
+                        Smartphones
+                    </option>
+
+                    <option value="BAT">
+                        Sports
+                    </option>
+
+                    <option value="BIKE">
+                        Bikes
+                    </option>
+
+                    <option value="CAR">
+                        Cars
+                    </option>
+
+                    <option value="Luggage">
+                        Luggage
+                    </option>
+
+                    <option value="Audio">
+                        Audio
+                    </option>
+
+                    <option value="SNACK">
+                        Snacks
+                    </option>
+
+                    <option value="COLD_DRINK">
+                        Cold Drinks
+                    </option>
+
+                    <option value="SURF">
+                        Cleaning
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- BRAND -->
+
+            <div class="filter-group">
+
+                <label for="filterBrand">
+                    Brand
+                </label>
+
+                <input type="text" id="filterBrand" placeholder="Enter brand...">
+
+            </div>
+
+
+            <!-- MIN PRICE -->
+
+            <div class="filter-group">
+
+                <label for="minPrice">
+                    Minimum Price
+                </label>
+
+                <input type="number" id="minPrice" placeholder="₹ Min" min="0">
+
+            </div>
+
+
+            <!-- MAX PRICE -->
+
+            <div class="filter-group">
+
+                <label for="maxPrice">
+                    Maximum Price
+                </label>
+
+                <input type="number" id="maxPrice" placeholder="₹ Max" min="0">
+
+            </div>
+
+
+            <!-- RATING -->
+
+            <div class="filter-group">
+
+                <label for="minRating">
+                    Minimum Rating
+                </label>
+
+                <select id="minRating">
+
+                    <option value="">
+                        Any Rating
+                    </option>
+
+                    <option value="4.5">
+                        ⭐ 4.5+
+                    </option>
+
+                    <option value="4.0">
+                        ⭐ 4.0+
+                    </option>
+
+                    <option value="3.5">
+                        ⭐ 3.5+
+                    </option>
+
+                    <option value="3.0">
+                        ⭐ 3.0+
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <button type="button" id="applyFiltersButton" class="apply-filters-btn">
+            🔍 Apply Filters
+        </button>
+
+    </section>
     <!-- ================= PRODUCTS ================= -->
 
     <section class="products-section">
@@ -349,6 +518,7 @@
     <script src="js/api.js"></script>
     <script src="js/wishlist.js"></script>
     <script src="js/product.js"></script>
+    <script src="js/filter.js"></script>
     <script src="js/sorting.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/category.js"></script>

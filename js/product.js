@@ -133,7 +133,18 @@ function renderPagination(currentPage, totalPages) {
 
         // loadProducts() internally script.js ke currentSortBy/currentSortDirection ko use karega
         button.onclick = function () {
-            loadProducts(i);
+
+            if (filtersAreActive) {
+
+                applyFilters(i);
+
+            }
+            else {
+
+                loadProducts(i);
+
+            }
+
         };
 
         if (i === currentPage) {

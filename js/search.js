@@ -2,25 +2,42 @@
 // SEARCH MODULE
 // ======================
 
+let searchTimer;
+
+
+// ======================
+// SEARCH PRODUCT
+// ======================
+
 function searchProduct(value) {
 
-    value = value.toLowerCase();
+    currentFilters.name =
+        value.trim();
 
-    let cards = document.querySelectorAll(".product-card");
 
-    cards.forEach(card => {
+    clearTimeout(searchTimer);
 
-        let name = card.querySelector("h3").textContent.toLowerCase();
 
-        if (name.includes(value)) {
+    searchTimer = setTimeout(
+        function () {
 
-            card.style.display = "block";
+            if (value.trim()) {
 
-        } else {
+                filtersAreActive = true;
 
-            card.style.display = "none";
+                applyFilters(0);
 
-        }
+            }
+            else {
 
-    });
+                filtersAreActive = false;
+
+                applyFilters(0);
+
+            }
+
+        },
+        500
+    );
+
 }

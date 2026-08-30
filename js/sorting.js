@@ -23,7 +23,17 @@ async function changeSorting(sortValue) {
 
         currentSortDirection = "";
 
-        loadProducts(0);
+
+        if (filtersAreActive) {
+
+            applyFilters(0);
+
+        }
+        else {
+
+            loadProducts(0);
+
+        }
 
         return;
 
@@ -47,7 +57,16 @@ async function changeSorting(sortValue) {
     // LOAD FIRST PAGE
     // ======================
 
-    loadProducts(0);
+    if (filtersAreActive) {
+
+        applyFilters(0);
+
+    }
+    else {
+
+        loadProducts(0);
+
+    }
 
 }
 
