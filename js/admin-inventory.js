@@ -14,7 +14,9 @@ async function loadInventory() {
     try {
 
         const response =
-            await apiFetch("/products");
+            await apiFetch(
+                "/products?page=0&size=1000"
+            );
 
         if (!response) {
             return;
@@ -33,8 +35,11 @@ async function loadInventory() {
             return;
         }
 
+        const data =
+            responseData.data;
+
         inventoryProducts =
-            responseData.data || [];
+            data.content || [];
 
         renderInventory(
             inventoryProducts

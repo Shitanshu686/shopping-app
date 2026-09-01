@@ -21,7 +21,9 @@ async function loadAdminProducts() {
     try {
 
         const response =
-            await apiFetch("/products");
+            await apiFetch(
+                "/products?page=0&size=1000"
+            );
 
         if (!response) {
 
@@ -36,8 +38,11 @@ async function loadAdminProducts() {
         const responseData =
             await response.json();
 
+        const data =
+            responseData.data;
+
         products =
-            responseData.data || [];
+            data.content || [];
 
         renderProducts(products);
 
@@ -97,65 +102,68 @@ function renderProducts(productList) {
             document.createElement("tr");
 
 
+        const imageSrc =
+            product.image &&
+                product.image.startsWith("/uploads/")
+                ? `${API_BASE_URL}${product.image}`
+                : product.image;
+
+
         row.innerHTML = `
 
-    <td>
-        ${product.id}
-    </td>
+        <td>
+            ${product.id}
+        </td>
 
-    <td>
+        <td>
 
-        <img
-            src="${product.image}"
-            alt="${product.name}"
-            class="admin-product-image"
-        >
+            <img
+                src="${imageSrc}"
+                alt="${product.name}"
+                class="admin-product-image"
+            >
 
-    </td>
+        </td>
 
-    <td>
-        ${product.name}
-    </td>
+        <td>
+            ${product.name}
+        </td>
 
-    <td>
-        ${product.brand}
-    </td>
+        <td>
+            ${product.brand}
+        </td>
 
-    <td>
-        ${product.category}
-    </td>
+        <td>
+            ${product.category}
+        </td>
 
-    <td>
-        ₹${product.price}
-    </td>
+        <td>
+            ₹${product.price}
+        </td>
 
-    <td>
-        ${product.stock}
-    </td>
+        <td>
+            ${product.stock}
+        </td>
 
-    <td>
+        <td>
 
-        <div class="product-actions">
+            <div class="product-actions">
 
-            <button
-                onclick="editProduct(${product.id})">
+                <button
+                    onclick="editProduct(${product.id})">
+                    Edit
+                </button>
 
-                Edit
+                <button
+                    onclick="deleteProduct(${product.id})">
+                    Delete
+                </button>
 
-            </button>
+            </div>
 
-            <button
-                onclick="deleteProduct(${product.id})">
+        </td>
 
-                Delete
-
-            </button>
-
-        </div>
-
-    </td>
-
-`;
+    `;
 
 
         tableBody.appendChild(row);
@@ -163,7 +171,6 @@ function renderProducts(productList) {
     });
 
 }
-
 
 // ======================
 // SEARCH PRODUCTS
@@ -354,7 +361,38 @@ async function saveProduct(event) {
 
     event.preventDefault();
 
+    // ======================
+    // IMAGE UPLOAD
+    // ======================
 
+    let imageURL =
+        document
+            .getElementById("productImage")
+            .value
+            .trim();
+
+
+    const imageFile =
+        document
+            .getElementById("productImageFile")
+            .files[0];
+
+
+    if (imageFile) {
+
+        imageURL =
+            await uploadProductImage(
+                imageFile
+            );
+
+
+        if (!imageURL) {
+
+            return;
+
+        }
+
+    }
     const productData = {
 
         name:
@@ -394,9 +432,7 @@ async function saveProduct(event) {
             ) || 0,
 
         image:
-            document.getElementById(
-                "productImage"
-            ).value.trim(),
+            imageURL,
 
         category:
             document.getElementById(

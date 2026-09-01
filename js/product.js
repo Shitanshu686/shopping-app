@@ -45,7 +45,9 @@ function createProductCard(product) {
 
         <img
     class="product-card__image"
-    src="${product.image}"
+    src="${product.image.startsWith("/uploads/")
+            ? "http://localhost:8080" + product.image
+            : product.image}"
     alt="${product.name}"
 >
 

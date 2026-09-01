@@ -285,7 +285,19 @@
                         Image URL
                     </label>
 
-                    <input type="text" id="productImage" required>
+                    <input type="text" id="productImage" placeholder="Enter image path or URL">
+
+                    <small>
+                        Or choose an image from your computer
+                    </small>
+
+                    <input type="file" id="productImageFile" accept="image/*">
+
+                    <div id="imagePreviewContainer" class="image-preview-container">
+
+                        <img id="imagePreview" class="image-preview" alt="Image Preview">
+
+                    </div>
 
                 </div>
 
@@ -329,6 +341,7 @@
     <!-- ====================== -->
 
     <script src="js/api.js"></script>
+    <script src="js/image-upload.js"></script>
 
     <script src="js/admin-products.js"></script>
 

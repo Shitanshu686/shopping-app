@@ -21,13 +21,22 @@ async function apiFetch(
 
     const headers = {
 
-        "Content-Type":
-            "application/json",
-
         ...options.headers
 
     };
+    // ======================
+    // CONTENT TYPE
+    // ======================
 
+    if (
+        options.body &&
+        !(options.body instanceof FormData)
+    ) {
+
+        headers["Content-Type"] =
+            "application/json";
+
+    }
 
     // ======================
     // ADD JWT
