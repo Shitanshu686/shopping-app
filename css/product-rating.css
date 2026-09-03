@@ -1,0 +1,135 @@
+/* =========================
+   PRODUCT RATING
+========================== */
+
+.rating-section {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.rating-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.rating-header {
+    margin-bottom: 20px;
+}
+
+.rating-header h2 {
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.rating-header p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RATING FORM
+========================== */
+
+.rating-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rating-label {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+/* =========================
+   STAR RATING
+========================== */
+
+.rating-stars {
+    display: flex;
+    gap: 8px;
+}
+
+.rating-star {
+    font-size: 32px;
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.2s;
+}
+
+.rating-star.active {
+    color: #f5b301;
+}
+
+.rating-star:hover {
+    color: #f5b301;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================== */
+
+.rating-submit-btn {
+    width: fit-content;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #2874f0;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.rating-submit-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RATING MESSAGE
+========================== */
+
+.rating-message {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.rating-message.success {
+    color: green;
+}
+
+.rating-message.error {
+    color: red;
+}
+
+
+/* =========================
+   DARK MODE
+========================== */
+
+body.dark-mode .rating-container {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode .rating-header p {
+    color: #bbbbbb;
+}
+
+body.dark-mode .rating-star {
+    color: #555;
+}
+
+body.dark-mode .rating-star.active,
+body.dark-mode .rating-star:hover {
+    color: #f5b301;
+}

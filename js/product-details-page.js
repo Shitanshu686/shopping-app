@@ -34,6 +34,12 @@ async function loadProductDetails() {
 
         renderProductDetails(product);
 
+        // ======================
+        // LOAD REAL RATING
+        // ======================
+
+        loadProductAverageRating(product.rating);
+
     }
     catch (error) {
 
@@ -88,7 +94,14 @@ function renderProductDetails(product) {
             </p>
 
 
-            <div class="product-details__rating">
+            <!-- ======================
+                 PRODUCT RATING
+            ======================= -->
+
+            <div
+                id="productAverageRating"
+                class="product-details__rating"
+            >
                 ⭐ ${product.rating}
             </div>
 
@@ -175,7 +188,9 @@ function renderProductDetails(product) {
                         Rating
                     </span>
 
-                    <strong>
+                    <strong
+                        id="productSpecificationRating"
+                    >
                         ⭐ ${product.rating}
                     </strong>
 
@@ -195,19 +210,130 @@ function renderProductDetails(product) {
                 </div>
 
             </div>
+
+
+            <!-- ======================
+                 TECHNICAL SPECIFICATIONS
+            ======================= -->
+
             <div class="product-details__specifications">
 
-    <h2>
-        Technical Specifications
-    </h2>
+                <h2>
+                    Technical Specifications
+                </h2>
 
-    <div id="productSpecifications"></div>
+                <div id="productSpecifications"></div>
 
-</div>
+            </div>
 
         </div>
 
     `;
+
+}
+
+
+// ======================
+// LOAD PRODUCT AVERAGE RATING
+// ======================
+
+async function loadProductAverageRating(
+    defaultRating
+) {
+
+    try {
+
+        const response =
+            await apiFetch(
+                `/ratings/product/${productId}`
+            );
+
+
+        if (!response) {
+            return;
+        }
+
+
+        const responseData =
+            await response.json();
+
+
+        const averageRating =
+            responseData.data;
+
+
+        // ======================
+        // NO USER RATINGS
+        // ======================
+
+        if (
+            averageRating === null ||
+            averageRating === undefined
+        ) {
+
+            updateProductRating(
+                defaultRating
+            );
+
+            return;
+        }
+
+
+        // ======================
+        // REAL USER RATING
+        // ======================
+
+        updateProductRating(
+            averageRating
+        );
+
+    }
+    catch (error) {
+
+        console.error(
+            "Failed to load product average rating:",
+            error
+        );
+
+    }
+
+}
+
+
+// ======================
+// UPDATE PRODUCT RATING
+// ======================
+
+function updateProductRating(
+    rating
+) {
+
+    const ratingElement =
+        document.getElementById(
+            "productAverageRating"
+        );
+
+
+    const specificationRating =
+        document.getElementById(
+            "productSpecificationRating"
+        );
+
+
+    if (ratingElement) {
+
+        ratingElement.textContent =
+            `⭐ ${Number(rating).toFixed(1)}`;
+
+    }
+
+
+    if (specificationRating) {
+
+        specificationRating.textContent =
+            `⭐ ${Number(rating).toFixed(1)}`;
+
+    }
 
 }
 
