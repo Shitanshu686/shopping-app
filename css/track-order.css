@@ -1,0 +1,274 @@
+/* ==============================
+   TRACK ORDER PAGE
+================================= */
+
+.track-header {
+    background: #172337;
+    padding: 18px 0;
+}
+
+.track-header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.track-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.track-back-home {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.track-back-home:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   HERO
+================================= */
+
+.track-hero {
+    background: #f5f7fa;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.track-hero span {
+    color: #2874f0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.track-hero h1 {
+    margin: 12px 0;
+
+    font-size: 38px;
+    color: #172337;
+}
+
+.track-hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   MAIN
+================================= */
+
+.track-section {
+    padding: 55px 20px;
+}
+
+.track-container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+/* ==============================
+   TRACK CARD
+================================= */
+
+.track-card {
+    text-align: center;
+
+    padding: 40px 30px;
+
+    border: 1px solid #e2e5e9;
+    border-radius: 12px;
+
+    background: #fff;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.track-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.track-card h2 {
+    color: #172337;
+    margin-bottom: 12px;
+}
+
+.track-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.track-button {
+    display: inline-block;
+
+    background: #2874f0;
+    color: #fff;
+
+    text-decoration: none;
+
+    padding: 12px 25px;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.track-button:hover {
+    opacity: 0.9;
+}
+
+
+/* ==============================
+   ORDER FLOW
+================================= */
+
+.track-flow {
+    margin-top: 45px;
+}
+
+.track-step {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 18px 20px;
+
+    background: #f8f9fb;
+    border-radius: 8px;
+}
+
+.track-step-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff;
+    border-radius: 50%;
+
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.track-step h3 {
+    margin: 0 0 5px;
+
+    color: #172337;
+    font-size: 17px;
+}
+
+.track-step p {
+    margin: 0;
+
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.track-line {
+    width: 2px;
+    height: 25px;
+
+    background: #d8dce2;
+
+    margin-left: 41px;
+}
+
+
+/* ==============================
+   HELP
+================================= */
+
+.track-help {
+    margin-top: 45px;
+
+    padding: 30px;
+
+    background: #f5f7fa;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.track-help h2 {
+    color: #172337;
+    margin-bottom: 10px;
+}
+
+.track-help p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.track-help a {
+    display: inline-block;
+
+    background: #2874f0;
+    color: #fff;
+
+    text-decoration: none;
+
+    padding: 11px 22px;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.track-help a:hover {
+    opacity: 0.9;
+}
+
+
+/* ==============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+
+    .track-header-container {
+        width: 92%;
+    }
+
+    .track-hero {
+        padding: 45px 15px;
+    }
+
+    .track-hero h1 {
+        font-size: 30px;
+    }
+
+    .track-section {
+        padding: 40px 15px;
+    }
+
+    .track-container {
+        width: 100%;
+    }
+
+    .track-card {
+        padding: 30px 20px;
+    }
+
+}

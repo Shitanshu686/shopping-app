@@ -1,0 +1,187 @@
+/* ==============================
+   TERMS & CONDITIONS PAGE
+================================= */
+
+.terms-header {
+    background: #172337;
+    padding: 18px 0;
+}
+
+.terms-header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terms-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.terms-back-home {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.terms-back-home:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   HERO
+================================= */
+
+.terms-hero {
+    background: #f5f7fa;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.terms-hero span {
+    color: #2874f0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.terms-hero h1 {
+    margin: 12px 0;
+
+    font-size: 38px;
+    color: #172337;
+}
+
+.terms-hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   CONTENT
+================================= */
+
+.terms-section {
+    padding: 55px 20px;
+}
+
+.terms-container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.terms-block {
+    margin-bottom: 40px;
+}
+
+.terms-block h2 {
+    color: #172337;
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.terms-block p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.terms-inline-link {
+    display: inline-block;
+    margin-top: 12px;
+
+    color: #2874f0;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.terms-inline-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   SUPPORT
+================================= */
+
+.terms-support {
+    margin-top: 50px;
+
+    padding: 30px;
+
+    background: #f5f7fa;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.terms-support h2 {
+    color: #172337;
+    margin-bottom: 10px;
+}
+
+.terms-support p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.terms-support a {
+    display: inline-block;
+
+    background: #2874f0;
+    color: #fff;
+
+    text-decoration: none;
+
+    padding: 11px 22px;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.terms-support a:hover {
+    opacity: 0.9;
+}
+
+
+/* ==============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+
+    .terms-header-container {
+        width: 92%;
+    }
+
+    .terms-hero {
+        padding: 45px 15px;
+    }
+
+    .terms-hero h1 {
+        font-size: 30px;
+    }
+
+    .terms-section {
+        padding: 40px 15px;
+    }
+
+    .terms-container {
+        width: 100%;
+    }
+
+}
