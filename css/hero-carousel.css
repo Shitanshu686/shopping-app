@@ -1,0 +1,99 @@
+/* =========================================================
+   SHOP EASE - HERO CAROUSEL
+========================================================= */
+
+.banner {
+    position: relative;
+    width: 95%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Same aspect ratio as original banner.png (1706 × 922) */
+.banner .hero-carousel-track {
+    display: flex;
+    width: 100%;
+    aspect-ratio: 1706 / 922;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Individual Slide */
+.banner .hero-slide {
+    position: relative;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+/* All images forced into exactly same area */
+.banner .hero-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* Previous / Next Buttons */
+.banner .hero-prev,
+.banner .hero-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.banner .hero-prev {
+    left: 15px;
+}
+
+.banner .hero-next {
+    right: 15px;
+}
+
+.banner .hero-prev:hover,
+.banner .hero-next:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Dots */
+.banner .hero-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+}
+
+.banner .hero-dot {
+    width: 9px;
+    height: 9px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+.banner .hero-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
