@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/hero-carousel.css">
+    <link rel="stylesheet" href="css/flash-sale.css">
+    <link rel="stylesheet" href="css/flash-sale.css">
 
 </head>
 
@@ -395,6 +397,49 @@
         </button>
 
     </section>
+    <!-- ================= FLASH SALE ================= -->
+<section class="flash-sale-section">
+
+    <div class="flash-sale-header">
+
+        <div>
+            <span class="flash-sale-label">⚡ LIMITED TIME</span>
+            <h2>Flash Sale</h2>
+            <p>Best deals from available products</p>
+        </div>
+
+        <div class="flash-sale-timer">
+            <span>Ends in</span>
+
+            <div class="timer-boxes">
+                <div>
+                    <strong id="flash-hours">00</strong>
+                    <small>Hours</small>
+                </div>
+
+                <span>:</span>
+
+                <div>
+                    <strong id="flash-minutes">00</strong>
+                    <small>Min</small>
+                </div>
+
+                <span>:</span>
+
+                <div>
+                    <strong id="flash-seconds">00</strong>
+                    <small>Sec</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="flash-sale-products" id="flashSaleProducts"></div>
+
+</section>
+
+
     <!-- ================= PRODUCTS ================= -->
 
     <section class="products-section">
@@ -525,6 +570,7 @@
     <script src="js/dark-mode.js"></script>
     <script src="js/footer-loader.js"></script>
     <script src="js/hero-carousel.js"></script>
+    <script src="js/flash-sale.js"></script>
     <script>
         initializeWishlist();
     </script>
