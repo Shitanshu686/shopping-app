@@ -26,21 +26,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         const availableProducts = products
             .filter(product => product.stock > 0)
             .map(product => {
-
-                const discount = product.oldPrice > 0
-                    ? Math.round(
-                        ((product.oldPrice - product.price)
-                        / product.oldPrice) * 100
-                    )
-                    : 0;
+                const currentPrice = Number(product.price);
+                const flashPrice = Math.round(currentPrice * 0.90);
 
                 return {
                     ...product,
-                    discount
+                    flashPrice,
+                    discount: 10
                 };
             })
-            .filter(product => product.discount > 0)
-            .sort((a, b) => b.discount - a.discount)
             .slice(0, 6);
 
         renderFlashSale(availableProducts);
@@ -105,11 +99,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                     <div class="flash-price">
                         <strong>
-                            ₹${Number(product.price).toLocaleString("en-IN")}
+                            ₹${product.flashPrice.toLocaleString("en-IN")}
                         </strong>
 
                         <del>
-                            ₹${Number(product.oldPrice).toLocaleString("en-IN")}
+                            ₹${Number(product.price).toLocaleString("en-IN")}
                         </del>
                     </div>
 
