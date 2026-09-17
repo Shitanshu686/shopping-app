@@ -187,8 +187,26 @@ document.addEventListener("DOMContentLoaded", async () => {
        COUNTDOWN
     ========================= */
 
-    const saleEndTime =
-        Date.now() + (12 * 60 * 60 * 1000);
+    const FLASH_SALE_END_KEY = "shopease_flash_sale_end";
+
+    let saleEndTime =
+        localStorage.getItem(FLASH_SALE_END_KEY);
+
+    if (!saleEndTime || Number(saleEndTime) <= Date.now()) {
+
+        saleEndTime =
+            Date.now() + (12 * 60 * 60 * 1000);
+
+        localStorage.setItem(
+            FLASH_SALE_END_KEY,
+            saleEndTime
+        );
+
+    } else {
+
+        saleEndTime = Number(saleEndTime);
+
+    }
 
     function updateTimer() {
 
