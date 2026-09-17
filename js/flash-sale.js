@@ -187,65 +187,55 @@ document.addEventListener("DOMContentLoaded", async () => {
        COUNTDOWN
     ========================= */
 
-    const FLASH_SALE_END_KEY = "shopease_flash_sale_end";
+    try {
+        const flashSaleResponse = await fetch("http://localhost:8081/flash-sale");
+        const flashSale = await flashSaleResponse.json();
 
-    let saleEndTime =
-        localStorage.getItem(FLASH_SALE_END_KEY);
+        if (flashSale.active) {
 
-    if (!saleEndTime || Number(saleEndTime) <= Date.now()) {
+            const endTime = new Date(flashSale.endTime).getTime();
 
-        saleEndTime =
-            Date.now() + (12 * 60 * 60 * 1000);
+            function updateFlashTimer() {
 
-        localStorage.setItem(
-            FLASH_SALE_END_KEY,
-            saleEndTime
-        );
+                const remaining = endTime - Date.now();
 
-    } else {
+                if (remaining <= 0) {
+                    document.getElementById("flash-hours").textContent = "00";
+                    document.getElementById("flash-minutes").textContent = "00";
+                    document.getElementById("flash-seconds").textContent = "00";
+                    return;
+                }
 
-        saleEndTime = Number(saleEndTime);
+                const totalSeconds = Math.floor(remaining / 1000);
 
-    }
+                const hours = Math.floor(totalSeconds / 3600);
 
-    function updateTimer() {
+                const minutes = Math.floor(
+                    (totalSeconds % 3600) / 60
+                );
 
-        const remaining =
-            saleEndTime - Date.now();
+                const seconds = totalSeconds % 60;
 
-        if (remaining <= 0) {
-            return;
+                document.getElementById("flash-hours").textContent =
+                    String(hours).padStart(2, "0");
+
+                document.getElementById("flash-minutes").textContent =
+                    String(minutes).padStart(2, "0");
+
+                document.getElementById("flash-seconds").textContent =
+                    String(seconds).padStart(2, "0");
+            }
+
+            updateFlashTimer();
+
+            setInterval(updateFlashTimer, 1000);
         }
 
-        const totalSeconds =
-            Math.floor(remaining / 1000);
-
-        const hours =
-            Math.floor(totalSeconds / 3600);
-
-        const minutes =
-            Math.floor(
-                (totalSeconds % 3600) / 60
-            );
-
-        const seconds =
-            totalSeconds % 60;
-
-        document.getElementById("flash-hours")
-            .textContent =
-            String(hours).padStart(2, "0");
-
-        document.getElementById("flash-minutes")
-            .textContent =
-            String(minutes).padStart(2, "0");
-
-        document.getElementById("flash-seconds")
-            .textContent =
-            String(seconds).padStart(2, "0");
+    } catch (error) {
+        console.error("Flash Sale Timer Error:", error);
     }
 
-    updateTimer();
 
-    setInterval(updateTimer, 1000);
-
+    
 });
+
