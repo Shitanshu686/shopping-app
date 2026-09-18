@@ -120,7 +120,7 @@ async function addToCart(
 
         cartData.items.forEach(item => {
 
-            cart[item.productId] = {
+            cart[item.id] = {
 
                 cartItemId: item.id,
 
@@ -130,7 +130,12 @@ async function addToCart(
 
                 image: item.image,
 
-                name: item.productName
+                name: item.productName,
+                originalPrice: item.originalPrice,
+
+                discountPercent: item.discountPercent,
+
+                flashSale: item.flashSale
 
             };
 
@@ -169,24 +174,35 @@ function updateCart() {
     cartItems.innerHTML = "";
 
     let total = 0;
-
     let count = 0;
 
-
-    for (let productId in cart) {
+    for (let cartItemId in cart) {
 
         const item =
-            cart[productId];
-
+            cart[cartItemId];
 
         const subtotal =
             item.price * item.quantity;
 
-
         count += item.quantity;
-
         total += subtotal;
 
+        const priceHTML =
+            item.flashSale && item.originalPrice != null
+                ? `
+                    <del>
+                        ₹${Number(item.originalPrice).toLocaleString("en-IN")}
+                    </del>
+                    <strong>
+                        ₹${Number(item.price).toLocaleString("en-IN")}
+                    </strong>
+                    <span class="cart-discount-badge">
+                        ${item.discountPercent || 0}% OFF
+                    </span>
+                  `
+                : `
+                    ₹${Number(item.price).toLocaleString("en-IN")}
+                  `;
 
         cartItems.innerHTML += `
 
@@ -207,7 +223,7 @@ function updateCart() {
                     </strong>
 
                     <div class="cart-item-price">
-                        ₹${item.price}
+                        ${priceHTML}
                     </div>
 
                     <div class="cart-item-quantity">
@@ -215,25 +231,25 @@ function updateCart() {
                     </div>
 
                     <div class="cart-item-subtotal">
-                        ₹${subtotal}
+                        ₹${Number(subtotal).toLocaleString("en-IN")}
                     </div>
 
                     <div class="cart-item-actions">
 
                         <button
-                            onclick="changeQty(${productId}, 'inc')"
+                            onclick="changeQty(${cartItemId}, inc)"
                         >
                             +
                         </button>
 
                         <button
-                            onclick="changeQty(${productId}, 'dec')"
+                            onclick="changeQty(${cartItemId}, dec)"
                         >
                             -
                         </button>
 
                         <button
-                            onclick="removeItem(${productId})"
+                            onclick="removeItem(${cartItemId})"
                         >
                             Remove
                         </button>
@@ -247,83 +263,55 @@ function updateCart() {
         </li>
 
         `;
-
     }
 
-
     document.getElementById("total").textContent =
-        total;
-
+        Number(total).toLocaleString("en-IN");
 
     document.getElementById("itemCount").textContent =
         count;
-
 
     const cartCount =
         document.getElementById("cartCount");
 
     if (cartCount) {
-
-        cartCount.textContent =
-            count;
-
+        cartCount.textContent = count;
     }
 
-
     /*
-     * Backend cart is now the source of truth.
-     *
-     * We intentionally do NOT save this cart
-     * back into localStorage here.
+     * Backend cart is the source of truth.
+     * Do not save backend cart into localStorage.
      */
+
 }
 // ======================
 // CHANGE QUANTITY
 // ======================
+// ======================
 
-async function changeQty(productId, action) {
+async function changeQty(cartItemId, action) {
 
     const item =
-        cart[productId];
+        cart[cartItemId];
 
     if (!item) {
         return;
     }
 
-
     let newQuantity =
         item.quantity;
 
-
     if (action === "inc") {
-
         newQuantity++;
-
     }
     else if (action === "dec") {
-
         newQuantity--;
-
     }
-
-
-    // ======================
-    // REMOVE WHEN QUANTITY
-    // BECOMES ZERO
-    // ======================
 
     if (newQuantity <= 0) {
-
-        await removeItem(productId);
-
+        await removeItem(cartItemId);
         return;
-
     }
-
-
-    // ======================
-    // UPDATE BACKEND
-    // ======================
 
     try {
 
@@ -333,27 +321,18 @@ async function changeQty(productId, action) {
                 newQuantity
             );
 
-
         if (!cartData) {
-
             showToast(
                 "❌ Unable to update quantity"
             );
-
             return;
-
         }
-
-
-        // ======================
-        // SYNC FRONTEND CART
-        // ======================
 
         cart = {};
 
         cartData.items.forEach(item => {
 
-            cart[item.productId] = {
+            cart[item.id] = {
 
                 cartItemId: item.id,
 
@@ -363,12 +342,17 @@ async function changeQty(productId, action) {
 
                 image: item.image,
 
-                name: item.productName
+                name: item.productName,
+
+                originalPrice: item.originalPrice,
+
+                discountPercent: item.discountPercent,
+
+                flashSale: item.flashSale
 
             };
 
         });
-
 
         updateCart();
 
@@ -390,11 +374,12 @@ async function changeQty(productId, action) {
 // ======================
 // REMOVE PRODUCT
 // ======================
+// ======================
 
-async function removeItem(productId) {
+async function removeItem(cartItemId) {
 
     const item =
-        cart[productId];
+        cart[cartItemId];
 
     if (!item) {
         return;
@@ -408,24 +393,17 @@ async function removeItem(productId) {
             );
 
         if (!cartData) {
-
             showToast(
                 "❌ Unable to remove product"
             );
-
             return;
-
         }
-
-        // ======================
-        // SYNC FRONTEND CART
-        // ======================
 
         cart = {};
 
         cartData.items.forEach(item => {
 
-            cart[item.productId] = {
+            cart[item.id] = {
 
                 cartItemId: item.id,
 
@@ -435,7 +413,13 @@ async function removeItem(productId) {
 
                 image: item.image,
 
-                name: item.productName
+                name: item.productName,
+
+                originalPrice: item.originalPrice,
+
+                discountPercent: item.discountPercent,
+
+                flashSale: item.flashSale
 
             };
 
@@ -464,6 +448,7 @@ async function removeItem(productId) {
 }
 // ======================
 // CHECKOUT
+// ======================
 // ======================
 
 function buyNow() {
@@ -528,7 +513,6 @@ async function loadBackendCart() {
     const token =
         localStorage.getItem("token");
 
-    // User logged in nahi hai
     if (!token) {
         return;
     }
@@ -546,7 +530,7 @@ async function loadBackendCart() {
 
         cartData.items.forEach(item => {
 
-            cart[item.productId] = {
+            cart[item.id] = {
 
                 cartItemId: item.id,
 
@@ -556,7 +540,13 @@ async function loadBackendCart() {
 
                 image: item.image,
 
-                name: item.productName
+                name: item.productName,
+
+                originalPrice: item.originalPrice,
+
+                discountPercent: item.discountPercent,
+
+                flashSale: item.flashSale
 
             };
 
@@ -573,6 +563,7 @@ async function loadBackendCart() {
         );
 
     }
+
 }
 loadProducts();
 loadPendingCartItem();

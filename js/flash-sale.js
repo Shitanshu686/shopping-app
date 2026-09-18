@@ -159,9 +159,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                     Number(button.dataset.productId);
 
                 const result =
-                    await addProductToCart(productId, 1);
+                    await addProductToCart(productId, 1, true);
 
                 if (result) {
+                    await loadBackendCart();
 
                     button.textContent = "Added ✓";
 

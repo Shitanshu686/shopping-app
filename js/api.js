@@ -3,7 +3,7 @@
 // ======================
 
 const API_BASE_URL =
-    "http://localhost:8080";
+    "http://localhost:8090";
 
 
 // ======================
@@ -255,7 +255,8 @@ async function fetchOrders() {
 
 async function addProductToCart(
     productId,
-    quantity
+    quantity,
+    flashSale = false
 ) {
 
     const response =
@@ -265,11 +266,9 @@ async function addProductToCart(
                 method: "POST",
 
                 body: JSON.stringify({
-
                     productId: productId,
-
-                    quantity: quantity
-
+                    quantity: quantity,
+                    flashSale: flashSale
                 })
             }
         );
@@ -283,8 +282,6 @@ async function addProductToCart(
 
     return responseData.data;
 }
-
-
 // ======================
 // UPDATE CART QUANTITY
 // ======================
