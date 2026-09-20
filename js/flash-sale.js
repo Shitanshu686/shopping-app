@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     ========================= */
 
     try {
-        const flashSaleResponse = await fetch("http://localhost:8081/flash-sale");
+        const flashSaleResponse = await fetch("http://localhost:8080/flash-sale");
         const flashSale = await flashSaleResponse.json();
 
         if (flashSale.active) {

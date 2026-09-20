@@ -187,26 +187,29 @@ function updateCart() {
         count += item.quantity;
         total += subtotal;
 
-        const priceHTML =
-            item.flashSale && item.originalPrice != null
-                ? `
-                    <del>
-                        ₹${Number(item.originalPrice).toLocaleString("en-IN")}
-                    </del>
-                    <strong>
-                        ₹${Number(item.price).toLocaleString("en-IN")}
-                    </strong>
-                    <span class="cart-discount-badge">
-                        ${item.discountPercent || 0}% OFF
-                    </span>
-                  `
-                : `
+        const isSale = Boolean(item.flashSale);
+        const flashBadge = isSale
+            ? `<span style="display:inline-block; font-size:11px; background:#ffe4e6; color:#e11d48; font-weight:700; padding:2px 6px; border-radius:4px; margin-left:6px; vertical-align:middle; border:1px solid #fecdd3;">⚡ Flash Sale (10% OFF)</span>`
+            : "";
+
+        const priceHTML = isSale && item.originalPrice != null
+            ? `
+                <del style="color:#9ca3af; font-size:13px; margin-right:6px;">
+                    ₹${Number(item.originalPrice).toLocaleString("en-IN")}
+                </del>
+                <strong style="color:#e11d48; font-size:15px;">
                     ₹${Number(item.price).toLocaleString("en-IN")}
-                  `;
+                </strong>
+              `
+            : `
+                <strong style="font-size:15px;">
+                    ₹${Number(item.price).toLocaleString("en-IN")}
+                </strong>
+              `;
 
         cartItems.innerHTML += `
 
-        <li class="cart-item">
+        <li class="cart-item" style="${isSale ? "border-left: 3px solid #e11d48; padding-left: 8px;" : ""}">
 
             <div class="cart-item-content">
 
@@ -218,9 +221,9 @@ function updateCart() {
 
                 <div class="cart-item-details">
 
-                    <strong>
-                        ${item.name}
-                    </strong>
+                    <div style="display:flex; align-items:center; flex-wrap:wrap; margin-bottom:4px;">
+                        <strong>${item.name}</strong>${flashBadge}
+                    </div>
 
                     <div class="cart-item-price">
                         ${priceHTML}
