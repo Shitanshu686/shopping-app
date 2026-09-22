@@ -408,3 +408,25 @@ header {
         font-size: 13px;
     }
 }
+/* =========================
+   ADMIN LOGOUT BUTTON (From admin-dashboard.css)
+========================= */
+#adminLogoutButton {
+    padding: 9px 17px;
+    border: none;
+    border-radius: 6px;
+    background: #dc3545;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#adminLogoutButton:hover {
+    background: #b02a37;
+}
+
+#adminLogoutButton:active {
+    transform: scale(0.97);
+}
