@@ -1,0 +1,187 @@
+/* =========================================================
+   SHOP EASE - TRENDING PRODUCTS STYLING
+========================================================= */
+
+.trending-section {
+    max-width: 1200px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.trending-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+
+.trending-badge {
+    display: inline-block;
+    background: #ffe4e6;
+    color: #e11d48;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.trending-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+}
+
+.trending-header p {
+    color: #64748b;
+    font-size: 15px;
+    margin: 0;
+}
+
+.trending-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/* Product Card */
+.trending-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.trending-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.1);
+}
+
+.trending-img-wrapper {
+    width: 100%;
+    height: 220px;
+    background: #f8fafc;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.trending-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.trending-card:hover .trending-img-wrapper img {
+    transform: scale(1.04);
+}
+
+.trending-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(225, 29, 72, 0.3);
+}
+
+.trending-info {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.trending-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.trending-meta {
+    font-size: 13px;
+    color: #059669;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.trending-bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trending-price {
+    font-size: 19px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.trending-btn {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.trending-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Empty State */
+.trending-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 45px 25px;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+}
+
+.trending-empty-state span {
+    font-size: 42px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.trending-empty-state h3 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.trending-empty-state p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
