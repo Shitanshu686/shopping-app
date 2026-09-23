@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="css/deals-of-the-day.css">
     <link rel="stylesheet" href="css/category-cards.css">
     <link rel="stylesheet" href="css/recently-viewed.css">
+    <link rel="stylesheet" href="css/promotional-banners.css">
 </head>
 
 <body>
@@ -638,6 +639,34 @@
     <div id="toast"></div>
 
     
+    
+    <!-- ================= PROMOTIONAL BANNERS ================= -->
+    <section class="promo-banners-section" id="promoBannersSection">
+        <div class="promo-banners-grid">
+            <!-- Banner 1: Electronics Deal -->
+            <div class="promo-card promo-card--blue" data-category="Electronics">
+                <div class="promo-content">
+                    <span class="promo-tag">LIMITED TIME OFFER</span>
+                    <h3>Upgrade Your Tech</h3>
+                    <p>Up to <strong>40% OFF</strong> on premium gadgets & accessories.</p>
+                    <button class="promo-btn" onclick="applyPromoFilter('Electronics')">Shop Electronics &rarr;</button>
+                </div>
+                <div class="promo-badge-graphic">🎧</div>
+            </div>
+
+            <!-- Banner 2: Fashion & Sports -->
+            <div class="promo-card promo-card--dark" data-category="Sports">
+                <div class="promo-content">
+                    <span class="promo-tag promo-tag--gold">SEASON FINALE</span>
+                    <h3>Active & Sports Gear</h3>
+                    <p>Flat <strong>25% OFF</strong> on top athletic wear & bats.</p>
+                    <button class="promo-btn" onclick="applyPromoFilter('Sports')">Explore Gear &rarr;</button>
+                </div>
+                <div class="promo-badge-graphic">🏏</div>
+            </div>
+        </div>
+    </section>
+
     <!-- ================= RECENTLY VIEWED ================= -->
     <section class="recently-viewed-section" id="recentlyViewedSection" style="display: none;">
         <div class="recently-viewed-header">
@@ -656,6 +685,9 @@
     <!-- ================= FOOTER ================= -->
 
     
+    
+    
+
     <!-- ================= RECENTLY VIEWED ================= -->
     <section class="recently-viewed-section" id="recentlyViewedSection" style="display: none;">
         <div class="recently-viewed-header">
@@ -697,6 +729,7 @@
     <script src="js/deals-of-the-day.js"></script>
     <script src="js/category-cards.js"></script>
     <script src="js/recently-viewed.js"></script>
+    <script src="js/promotional-banners.js"></script>
     <script>
         initializeWishlist();
     </script>
