@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="css/flash-sale.css">
 
     <link rel="stylesheet" href="css/trending-products.css">
+    <link rel="stylesheet" href="css/best-sellers.css">
 </head>
 
 <body>
@@ -455,6 +456,21 @@
         </div>
     </section>
 
+    
+    <!-- ================= BEST SELLERS ================= -->
+    <section class="bestsellers-section" id="bestSellersSection">
+        <div class="bestsellers-header">
+            <div>
+                <span class="bestsellers-badge">🏆 TOP PERFORMERS</span>
+                <h2>Best Sellers</h2>
+                <p>Most purchased items by all shoppers</p>
+            </div>
+        </div>
+        <div class="bestsellers-products-grid" id="bestSellersProductsContainer">
+            <!-- Dynamic Best Seller Cards rendered via JS -->
+        </div>
+    </section>
+
     <!-- ================= PRODUCTS ================= -->
 
     <section class="products-section">
@@ -587,6 +603,7 @@
     <script src="js/hero-carousel.js"></script>
     <script src="js/flash-sale.js"></script>
     <script src="js/trending-products.js"></script>
+    <script src="js/best-sellers.js"></script>
     <script>
         initializeWishlist();
     </script>
