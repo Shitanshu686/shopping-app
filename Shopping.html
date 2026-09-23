@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="css/new-arrivals.css">
     <link rel="stylesheet" href="css/deals-of-the-day.css">
     <link rel="stylesheet" href="css/category-cards.css">
+    <link rel="stylesheet" href="css/recently-viewed.css">
 </head>
 
 <body>
@@ -636,7 +637,39 @@
 
     <div id="toast"></div>
 
+    
+    <!-- ================= RECENTLY VIEWED ================= -->
+    <section class="recently-viewed-section" id="recentlyViewedSection" style="display: none;">
+        <div class="recently-viewed-header">
+            <div>
+                <span class="recently-viewed-badge">👀 YOUR BROWSING HISTORY</span>
+                <h2>Recently Viewed</h2>
+                <p>Pick up right where you left off</p>
+            </div>
+            <button class="clear-history-btn" id="clearHistoryBtn">Clear History</button>
+        </div>
+        <div class="recently-viewed-grid" id="recentlyViewedContainer">
+            <!-- Dynamic Recently Viewed Cards -->
+        </div>
+    </section>
+
     <!-- ================= FOOTER ================= -->
+
+    
+    <!-- ================= RECENTLY VIEWED ================= -->
+    <section class="recently-viewed-section" id="recentlyViewedSection" style="display: none;">
+        <div class="recently-viewed-header">
+            <div>
+                <span class="recently-viewed-badge">👀 YOUR BROWSING HISTORY</span>
+                <h2>Recently Viewed</h2>
+                <p>Pick up right where you left off</p>
+            </div>
+            <button class="clear-history-btn" id="clearHistoryBtn">Clear History</button>
+        </div>
+        <div class="recently-viewed-grid" id="recentlyViewedContainer">
+            <!-- Dynamic Recently Viewed Cards -->
+        </div>
+    </section>
 
     <!-- ================= FOOTER ================= -->
 
@@ -663,9 +696,13 @@
     <script src="js/new-arrivals.js"></script>
     <script src="js/deals-of-the-day.js"></script>
     <script src="js/category-cards.js"></script>
+    <script src="js/recently-viewed.js"></script>
     <script>
         initializeWishlist();
     </script>
+
+
+
 </body>
 
 </html>
