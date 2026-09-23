@@ -1,0 +1,229 @@
+/* =========================================================
+   SHOP EASE - DEALS OF THE DAY STYLING
+========================================================= */
+
+.deals-section {
+    max-width: 1200px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.deals-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #fee2e2;
+    padding-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.deals-badge {
+    display: inline-block;
+    background: #fef2f2;
+    color: #dc2626;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    border: 1px solid #fecaca;
+}
+
+.deals-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+}
+
+.deals-header p {
+    color: #64748b;
+    font-size: 15px;
+    margin: 0;
+}
+
+.deals-countdown-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff1f2;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid #fecdd3;
+}
+
+.deals-countdown-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #9f1239;
+}
+
+.deals-timer {
+    font-size: 15px;
+    font-weight: 800;
+    color: #be123c;
+    font-variant-numeric: tabular-nums;
+}
+
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.deal-card {
+    background: #ffffff;
+    border: 1px solid #fed7aa;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.deal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -6px rgba(234, 88, 12, 0.15);
+}
+
+.deal-img-wrapper {
+    width: 100%;
+    height: 220px;
+    background: #fff7ed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.deal-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.deal-card:hover .deal-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.deal-discount-pill {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #dc2626;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+}
+
+.deal-info {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.deal-category {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #ea580c;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.deal-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deal-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.deal-final-price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #dc2626;
+}
+
+.deal-original-price {
+    font-size: 14px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.deal-bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deal-stock-status {
+    font-size: 12px;
+    color: #d97706;
+    font-weight: 600;
+}
+
+.deal-btn {
+    background: #dc2626;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.deal-btn:hover {
+    background: #b91c1c;
+}
+
+.deals-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 45px 25px;
+    background: #fff7ed;
+    border: 2px dashed #fed7aa;
+    border-radius: 12px;
+}
+
+.deals-empty-state span {
+    font-size: 42px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.deals-empty-state h3 {
+    margin: 0 0 8px 0;
+    color: #9a3412;
+    font-size: 19px;
+}
+
+.deals-empty-state p {
+    margin: 0;
+    color: #c2410c;
+    font-size: 14px;
+}

@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="css/trending-products.css">
     <link rel="stylesheet" href="css/best-sellers.css">
     <link rel="stylesheet" href="css/new-arrivals.css">
+    <link rel="stylesheet" href="css/deals-of-the-day.css">
 </head>
 
 <body>
@@ -487,6 +488,29 @@
         </div>
     </section>
 
+    
+    <!-- ================= DEALS OF THE DAY ================= -->
+    <section class="deals-section" id="dealsSection">
+        <div class="deals-header">
+            <div>
+                <span class="deals-badge">⏳ TODAY ONLY</span>
+                <h2>Deal of the Day</h2>
+                <p>Exclusive limited-time price drops on catalog favorites</p>
+            </div>
+            <div class="deals-countdown-box">
+                <span class="deals-countdown-label">Deals expire in:</span>
+                <div class="deals-timer" id="dealsTimer">
+                    <span id="dealHours">00</span>h : 
+                    <span id="dealMins">00</span>m : 
+                    <span id="dealSecs">00</span>s
+                </div>
+            </div>
+        </div>
+        <div class="deals-grid" id="dealsContainer">
+            <!-- Dynamic Deal Cards rendered via JS -->
+        </div>
+    </section>
+
     <!-- ================= PRODUCTS ================= -->
 
     <section class="products-section">
@@ -621,6 +645,7 @@
     <script src="js/trending-products.js"></script>
     <script src="js/best-sellers.js"></script>
     <script src="js/new-arrivals.js"></script>
+    <script src="js/deals-of-the-day.js"></script>
     <script>
         initializeWishlist();
     </script>
