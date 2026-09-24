@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="css/category-cards.css">
     <link rel="stylesheet" href="css/recently-viewed.css">
     <link rel="stylesheet" href="css/promotional-banners.css">
+    <link rel="stylesheet" href="css/brand-showcase.css">
 </head>
 
 <body>
@@ -640,6 +641,57 @@
 
     
     
+    
+    <!-- ================= TOP BRAND SHOWCASE ================= -->
+    <section class="brand-showcase-section" id="brandShowcaseSection">
+        <div class="brand-showcase-header">
+            <h3>Featured Brands</h3>
+            <span>Select a brand to view products</span>
+        </div>
+        <div class="brand-grid">
+            <div class="brand-card" data-brand="Samsung" onclick="filterByBrand('Samsung')">
+                <div class="brand-icon-wrapper">S</div>
+                <span class="brand-name">Samsung</span>
+                <span class="brand-tag">Mobiles & Tech</span>
+            </div>
+            <div class="brand-card" data-brand="Apple" onclick="filterByBrand('Apple')">
+                <div class="brand-icon-wrapper"></div>
+                <span class="brand-name">Apple</span>
+                <span class="brand-tag">Premium Tech</span>
+            </div>
+            <div class="brand-card" data-brand="Nike" onclick="filterByBrand('Nike')">
+                <div class="brand-icon-wrapper">✓</div>
+                <span class="brand-name">Nike</span>
+                <span class="brand-tag">Footwear</span>
+            </div>
+            <div class="brand-card" data-brand="Puma" onclick="filterByBrand('Puma')">
+                <div class="brand-icon-wrapper">🐆</div>
+                <span class="brand-name">Puma</span>
+                <span class="brand-tag">Sports & Gear</span>
+            </div>
+            <div class="brand-card" data-brand="Sony" onclick="filterByBrand('Sony')">
+                <div class="brand-icon-wrapper">🎧</div>
+                <span class="brand-name">Sony</span>
+                <span class="brand-tag">Audio & Sound</span>
+            </div>
+            <div class="brand-card" data-brand="Boat" onclick="filterByBrand('Boat')">
+                <div class="brand-icon-wrapper">⚓</div>
+                <span class="brand-name">Boat</span>
+                <span class="brand-tag">Audio & Wearables</span>
+            </div>
+            <div class="brand-card" data-brand="Safari" onclick="filterByBrand('Safari')">
+                <div class="brand-icon-wrapper">🧳</div>
+                <span class="brand-name">Safari</span>
+                <span class="brand-tag">Luggage</span>
+            </div>
+            <div class="brand-card" data-brand="Hawkins" onclick="filterByBrand('Hawkins')">
+                <div class="brand-icon-wrapper">🍳</div>
+                <span class="brand-name">Hawkins</span>
+                <span class="brand-tag">Kitchen Essentials</span>
+            </div>
+        </div>
+    </section>
+
     <!-- ================= PROMOTIONAL BANNERS ================= -->
     <section class="promo-banners-section" id="promoBannersSection">
         <div class="promo-banners-grid">
@@ -736,6 +788,7 @@
 
 
 
+    <script src="js/brand-showcase.js"></script>
 </body>
 
 </html>
