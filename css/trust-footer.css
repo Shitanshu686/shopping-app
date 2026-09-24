@@ -1,136 +1,68 @@
 /* =========================================================
-   SHOP EASE - TRUST BADGES & MODERN FOOTER
+   SHOP EASE - UNIFIED HORIZONTAL MASTER FOOTER
 ========================================================= */
 
-/* --- TRUST BADGES SECTION --- */
-.trust-badges-section {
-    background: #ffffff;
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 36px 20px;
-    margin-top: 50px;
-}
-
-.trust-badges-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-}
-
-.trust-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px;
-    border-radius: 12px;
-    background: #f8fafc;
-    border: 1px solid #edf2f7;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.trust-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
-}
-
-.trust-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    background: #eff6ff;
-    color: #2563eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-}
-
-.trust-text h4 {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.trust-text p {
-    margin: 3px 0 0 0;
-    font-size: 12px;
-    color: #64748b;
-}
-
-/* --- MAIN FOOTER --- */
 .site-footer {
-    background: #0f172a;
-    color: #94a3b8;
-    padding: 60px 20px 24px 20px;
-    font-size: 14px;
+    background: #0b1329 !important;
+    color: #94a3b8 !important;
+    padding: 50px 24px 25px 24px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-top: 1px solid #1e293b;
 }
 
-.footer-container {
-    max-width: 1200px;
+.footer-master-grid {
+    max-width: 1280px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 40px;
-    padding-bottom: 40px;
+    display: grid !important;
+    /* Clean horizontal 5 columns */
+    grid-template-columns: 1.4fr 1fr 1fr 1.1fr 1.5fr !important;
+    gap: 32px;
+    align-items: start;
+    padding-bottom: 35px;
     border-bottom: 1px solid #1e293b;
 }
 
-@media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
+@media (max-width: 1024px) {
+    .footer-master-grid {
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 28px;
     }
 }
 
-.footer-brand h3 {
+@media (max-width: 680px) {
+    .footer-master-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+    }
+}
+
+.footer-col h3 {
     color: #ffffff;
-    font-size: 22px;
+    font-size: 20px;
     margin: 0 0 12px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.footer-brand p {
-    line-height: 1.6;
-    margin: 0 0 16px 0;
-    color: #94a3b8;
-    max-width: 320px;
-}
-
-.payment-badges-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.pay-badge {
-    background: #1e293b;
-    color: #38bdf8;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    border: 1px solid #334155;
+    font-weight: 700;
 }
 
 .footer-col h4 {
     color: #ffffff;
     font-size: 15px;
-    margin: 0 0 16px 0;
+    margin: 0 0 14px 0;
     font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.footer-col p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin: 0 0 16px 0;
 }
 
 .footer-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .footer-col ul li {
@@ -140,55 +72,101 @@
 .footer-col ul li a {
     color: #94a3b8;
     text-decoration: none;
-    transition: color 0.2s ease;
+    font-size: 13.5px;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
 .footer-col ul li a:hover {
     color: #38bdf8;
+    transform: translateX(3px);
 }
 
-.newsletter-box input {
-    width: 100%;
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid #334155;
+.social-links-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.social-links-row a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
     background: #1e293b;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    transition: all 0.2s ease;
+}
+
+.social-links-row a:hover {
+    background: #2563eb;
     color: #ffffff;
-    margin-bottom: 8px;
-    box-sizing: border-box;
+    border-color: #2563eb;
+}
+
+.payment-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.payment-chips-row span {
+    background: #1e293b;
+    color: #38bdf8;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #334155;
+}
+
+.newsletter-form-row {
+    display: flex;
+    gap: 8px;
+}
+
+.newsletter-form-row input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: #ffffff;
     font-size: 13px;
     outline: none;
 }
 
-.newsletter-box input:focus {
+.newsletter-form-row input:focus {
     border-color: #38bdf8;
 }
 
-.newsletter-box button {
-    width: 100%;
-    padding: 10px;
+.newsletter-form-row button {
+    padding: 10px 16px;
     background: #2563eb;
     color: #ffffff;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     font-weight: 600;
     font-size: 13px;
     cursor: pointer;
     transition: background 0.2s;
+    white-space: nowrap;
 }
 
-.newsletter-box button:hover {
+.newsletter-form-row button:hover {
     background: #1d4ed8;
 }
 
-.footer-bottom {
-    max-width: 1200px;
-    margin: 24px auto 0 auto;
+.footer-bottom-bar {
+    max-width: 1280px;
+    margin: 22px auto 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
-    font-size: 12px;
+    font-size: 12.5px;
     color: #64748b;
 }
