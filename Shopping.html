@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="css/recently-viewed.css">
     <link rel="stylesheet" href="css/promotional-banners.css">
     <link rel="stylesheet" href="css/brand-showcase.css">
+    <link rel="stylesheet" href="css/cart-progress.css">
 </head>
 
 <body>
@@ -622,6 +623,13 @@
             <button onclick="closeCart()">✖</button>
 
         </div>
+        <!-- FREE DELIVERY PROGRESS BAR -->
+        <div class="free-delivery-box" id="freeDeliveryBox">
+            <div class="delivery-msg" id="deliveryMsg">Add items to unlock <strong>Free Delivery</strong></div>
+            <div class="delivery-progress-track">
+                <div class="delivery-progress-fill" id="deliveryProgressFill" style="width: 0%;"></div>
+            </div>
+        </div>
 
         <ul id="cartItems"></ul>
 
@@ -789,6 +797,7 @@
 
 
     <script src="js/brand-showcase.js"></script>
+    <script src="js/free-delivery-tracker.js"></script>
 </body>
 
 </html>
