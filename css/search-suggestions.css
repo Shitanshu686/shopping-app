@@ -1,0 +1,227 @@
+/* =========================================
+   SEARCH SUGGESTIONS
+   Modern Dark E-Commerce Dropdown
+   ========================================= */
+
+.search-box {
+    position: relative;
+}
+
+
+/* =========================
+   DROPDOWN
+   ========================= */
+
+.search-suggestions {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    z-index: 9999;
+
+    max-height: 360px;
+    overflow-y: auto;
+
+    background: rgba(24, 24, 28, 0.97);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.55),
+        0 4px 12px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(14px);
+
+    padding: 6px;
+
+    opacity: 0;
+    transform: translateY(-6px);
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+/* =========================
+   SHOW STATE
+   ========================= */
+
+.search-suggestions.show {
+    display: block;
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   EACH SUGGESTION
+   ========================= */
+
+.search-suggestion-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 46px;
+
+    padding: 12px 15px;
+
+    margin: 2px 0;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: #f5f5f5;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 0.1px;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.15s ease,
+        padding-left 0.15s ease;
+}
+
+
+/* =========================
+   SEARCH ICON EFFECT
+   ========================= */
+
+.search-suggestion-item::before {
+    content: "⌕";
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    margin-right: 10px;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: #bdbdbd;
+
+    font-size: 18px;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+
+/* =========================
+   HOVER
+   ========================= */
+
+.search-suggestion-item:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.04)
+        );
+
+    color: #ffffff;
+
+    transform: translateX(3px);
+
+    padding-left: 18px;
+}
+
+
+.search-suggestion-item:hover::before {
+    background: rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   FIRST / LAST ITEM
+   ========================= */
+
+.search-suggestion-item:first-child {
+    margin-top: 2px;
+}
+
+.search-suggestion-item:last-child {
+    margin-bottom: 2px;
+}
+
+
+/* =========================
+   SCROLLBAR
+   ========================= */
+
+.search-suggestions::-webkit-scrollbar {
+    width: 6px;
+}
+
+.search-suggestions::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+
+    border-radius: 10px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.30);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .search-suggestions {
+        top: calc(100% + 7px);
+
+        max-height: 300px;
+
+        border-radius: 11px;
+
+        padding: 5px;
+    }
+
+    .search-suggestion-item {
+        min-height: 42px;
+
+        padding: 10px 12px;
+
+        font-size: 13px;
+    }
+
+    .search-suggestion-item::before {
+        width: 25px;
+        height: 25px;
+
+        font-size: 16px;
+
+        margin-right: 8px;
+    }
+
+}
