@@ -1,0 +1,48 @@
+/* Dedicated Voice Search Styling */
+.search-box {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.voice-search-btn {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.15rem;
+    padding: 4px 6px;
+    border-radius: 50%;
+    outline: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voice-search-btn:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    transform: scale(1.1);
+}
+
+.voice-search-btn.listening {
+    background-color: #ff3b30;
+    color: #fff;
+    animation: mic-pulse 1.2s infinite;
+}
+
+@keyframes mic-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.6);
+        transform: scale(1);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 59, 48, 0);
+        transform: scale(1.12);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 59, 48, 0);
+        transform: scale(1);
+    }
+}
