@@ -98,8 +98,10 @@ async function handleCheckout(event) {
 
     try {
 
+        const key = typeof IdempotencyManager !== "undefined" ? IdempotencyManager.getKey() : null;
+
         const order =
-            await placeOrder(orderData);
+            await placeOrder(orderData, key);
 
 
         if (!order) {
@@ -163,6 +165,10 @@ async function handleCheckout(event) {
             order
         );
 
+        if (typeof IdempotencyManager !== "undefined") {
+            IdempotencyManager.resetKey();
+        }
+
 
         // ======================
         // CREATE PAYMENT ORDER
@@ -219,8 +225,18 @@ async function handleCheckout(event) {
             error
         );
 
+        if (error.status === 409) {
+            if (placeOrderBtn) {
+                placeOrderBtn.textContent = "Verifying order...";
+            }
+            setTimeout(() => {
+                handleCheckout({ preventDefault: () => {} });
+            }, 1500);
+            return;
+        }
+
         showCheckoutError(
-            "Unable to place order."
+            error.message || "Unable to place order."
         );
 
     }

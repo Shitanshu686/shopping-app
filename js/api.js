@@ -170,43 +170,53 @@ async function fetchCart() {
 // PLACE ORDER
 // ======================
 
-async function placeOrder(orderData) {
+async function placeOrder(orderData, idempotencyKey = null) {
 
-    const response =
-        await apiFetch(
-            "/orders",
-            {
-                method: "POST",
+	const reqHeaders = {};
+	if (idempotencyKey) {
+		reqHeaders["Idempotency-Key"] = idempotencyKey;
+	}
 
-                body: JSON.stringify(
-                    orderData
-                )
-            }
-        );
+	const response =
+		await apiFetch(
+			"/orders",
+			{
+				method: "POST",
+				headers: reqHeaders,
+				body: JSON.stringify(
+					orderData
+				)
+			}
+		);
 
-    if (!response) {
-        return null;
-    }
+	if (!response) {
+		return null;
+	}
 
-    const responseData =
-        await response.json();
+	const responseData =
+		await response.json();
 
+	if (!response.ok) {
+		const error = new Error(responseData.message || "Failed to place order.");
+		error.status = response.status;
+		error.data = responseData;
+		throw error;
+	}
 
+	const order =
+		responseData.data;
 
-    const order =
-        responseData.data;
+	if (!order) {
+		return null;
+	}
 
-    if (!order) {
-        return null;
-    }
+	return {
+		orderId:
+			order.orderId,
 
-    return {
-        orderId:
-            order.orderId,
-
-        totalAmount:
-            order.totalAmount
-    };
+		totalAmount:
+			order.totalAmount
+	};
 }
 
 // ======================
